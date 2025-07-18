@@ -2,11 +2,31 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Towers - Wiki do Jogo</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <main>
+    <header id="main-header">
+        <button id="menu-toggle">&#9776;</button>
+        <h1>Pokemon Eclipse Wiki</h1>
+    </header>
+
+    <nav id="sidebar">
+        <ul>
+            <li><strong>Navegação Rápida</strong></li>
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="#">Tutorial</a></li>
+            <li><a href="#">Quests</a></li>
+            <li><a href="#">Itens e Equipamentos</a></li>
+            <li><a href="#">Pokemons de Catch</a></li>
+            <li><a href="tower.html">Tower</a></li>
+        </ul>
+    </nav>
+
+    <div id="overlay"></div>
+
+    <main id="content">
         <h1>Towers do Nosso Universo</h1>
         <p>No nosso universo, existem atualmente <strong>quatro Towers</strong>, cada uma com recompensas e coldowns específicos. Abaixo você confere os detalhes:</p>
 
@@ -49,9 +69,11 @@
             </ul>
         </section>
 
-        <footer>
+        <footer id="main-footer">
             <p><em>Essas são as atuais Towers do nosso universo. Explore, lute e conquiste suas recompensas!</em></p>
         </footer>
     </main>
+
+    <script src="../script/script.js"></script>
 </body>
 </html>
