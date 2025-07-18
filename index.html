@@ -7,49 +7,48 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="page">
-        <header id="main-header">
-            <h1>Pokemon Eclipse Wiki</h1>
-        </header>
+    <header id="main-header">
+        <button id="menu-toggle">&#9776;</button>
+        <h1>Pokemon Eclipse Wiki</h1>
+    </header>
 
-        <div class="content-wrapper">
-            <div class="container">
-                <nav>
-                    <h3>Navegação Rápida</h3>
-                    <ul>
-                        <li><a href="#">Tutorial</a></li>
-                        <li><a href="#">Quests</a></li>
-                        <li><a href="#">Itens e Equipamentos</a></li>
-                        <li><a href="#">Pokemons de Catch</a></li>
-                    </ul>
-                </nav>
+    <nav id="sidebar">
+        <ul>
+            <li><strong>Navegação Rápida</strong></li>
+            <li><a href="#">Tutorial</a></li>
+            <li><a href="#">Quests</a></li>
+            <li><a href="#">Itens e Equipamentos</a></li>
+            <li><a href="#">Pokemons de Catch</a></li>
+        </ul>
+    </nav>
 
-                <main>
-                    <h2>Bem-vindo à Wiki do pokemon eclipse!</h2>
-                    <p>
-                        Este é o lugar para você explorar tudo sobre o universo do nosso jogo.
-                        Use a navegação lateral para encontrar informações sobre pokemons, quests,
-                        mecânicas de jogo e muito mais.
-                    </p>
+    <div id="overlay"></div>
 
-                    <h3>Entenda Sobre o Game:</h3>
-                    <ul>
-                        <li><a href="#">Moedas Principais</a></li>
-                        <li><a href="#">Explore o Mapa Inicial</a></li>
-                        <li><a href="#">Fusões</a></li>
-                    </ul>
+    <main id="content">
+        <section>
+            <h2>Bem-vindo à Wiki do pokemon eclipse!</h2>
+            <p>
+                Este é o lugar para você explorar tudo sobre o universo do nosso jogo.
+                Use a navegação lateral para encontrar informações sobre pokemons,
+                quests, mecânicas de jogo e muito mais.
+            </p>
+            <h3>Entenda Sobre o Game:</h3>
+            <ul>
+                <li><a href="#">Moedas Principais</a></li>
+                <li><a href="#">Explore o Mapa Inicial</a></li>
+                <li><a href="#">Fusões</a></li>
+            </ul>
+            <p>
+                Aqui é vantajoso para navegar e descobrir os segredos que nosso mundo guardará.
+            </p>
+        </section>
+    </main>
 
-                    <p>
-                        Aqui é vantajoso para navegar e descobrir os segredos que nosso mundo guardará.
-                    </p>
-                </main>
-            </div>
-        </div>
+    <footer id="main-footer">
+        <p>© 2025 Pokemon Eclipse. Todos os direitos reservados.<br>
+        Desenvolvido com carinho para a comunidade.</p>
+    </footer>
 
-        <footer>
-            © 2025 Pokemon Eclipse. Todos os direitos reservados.<br>
-            Desenvolvido com carinho para a comunidade.
-        </footer>
-    </div>
+    <script src="script/script.js"></script>
 </body>
 </html>
