@@ -5,9 +5,10 @@
     box-sizing: border-box;
 }
 
+/* Corpo */
 body {
     font-family: Arial, sans-serif;
-    background-color: #666;
+    background-color: #444; /* Fundo mais escuro e agradável */
     color: #fff;
     margin-left: 220px;
 }
@@ -42,7 +43,7 @@ body {
 
 /* Menu lateral */
 #sidebar {
-    background-color: #222;
+    background-color: #111; /* Preto mais limpo */
     width: 220px;
     padding: 20px;
     height: 100%;
@@ -51,6 +52,7 @@ body {
     top: 0;
     transition: transform 0.3s ease;
     z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
 }
 
 #sidebar ul {
@@ -66,6 +68,16 @@ body {
     text-decoration: none;
 }
 
+#sidebar a:hover {
+    text-decoration: underline;
+}
+
+#sidebar a.active {
+    font-weight: bold;
+    color: #f4d03f;
+}
+
+/* Overlay */
 #overlay {
     display: none;
     position: fixed;
@@ -87,6 +99,20 @@ body {
     text-align: center;
     padding: 20px;
     margin-top: 40px;
+}
+
+/* Links em geral */
+a {
+    color: #4fc3f7;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #4fc3f7;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 /* Responsivo */
@@ -113,5 +139,9 @@ body {
 
     body.menu-open {
         overflow: hidden;
+    }
+
+    #content {
+        padding: 20px 16px;
     }
 }
