@@ -2,13 +2,13 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tiers dos Pokémons - Pokemon Eclipse Wiki</title>
   <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
   <header id="main-header">
-    <button id="menu-toggle">&#9776;</button>
+    <button id="menu-toggle" aria-label="Abrir menu de navegação">&#9776;</button>
     <h1>Pokemon Eclipse Wiki</h1>
   </header>
 
@@ -16,12 +16,21 @@
     <ul>
       <li><strong>Navegação Rápida</strong></li>
       <li><a href="../index.html">Início</a></li>
-      <li><a href="#">Tutorial</a></li>
-      <li><a href="#">Quests</a></li>
-      <li><a href="#">Itens e Equipamentos</a></li>
-      <li><a href="#">Pokemons de Catch</a></li>
+      <li><a href="tutorial.html">Tutorial</a></li>
+      <li><a href="quests.html">Quests</a></li>
+      <li><a href="items.html">Itens e Equipamentos</a></li>
+      <li><a href="catch.html">Pokémons de Catch</a></li>
       <li><a href="tower.html">Tower</a></li>
-      <li><a href="tier.html">Tiers</a></li>
+      <li><a href="tier.html" class="active">Tiers dos Pokémons</a></li>
+      <li>
+        <button class="dropdown-btn">Stones ▸</button>
+        <ul class="dropdown-container">
+          <li><a href="shiny_stone.html">Shiny Stone</a></li>
+          <li><a href="black_stone.html">Black Stone</a></li>
+          <li><a href="mega_stone.html">Mega Stone</a></li>
+          <li><a href="cell_stone.html">Cell Stone</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
