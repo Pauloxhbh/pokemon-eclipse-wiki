@@ -23,6 +23,15 @@
       <li><a href="#">Pokémons de Catch</a></li>
       <li><a href="pages/tower.html">Tower</a></li>
       <li><a href="pages/tier.html">Tiers dos Pokémons</a></li>
+      <li>
+        <button class="dropdown-btn">Stones ▸</button>
+        <ul class="dropdown-container">
+          <li><a href="pages/shiny_stone.html">Shiny Stone</a></li>
+          <li><a href="pages/black_stone.html">Black Stone</a></li>
+          <li><a href="pages/mega_stone.html">Mega Stone</a></li>
+          <li><a href="pages/cell_stone.html">Cell Stone</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -58,5 +67,19 @@
   </footer>
 
   <script src="script/script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const dropdowns = document.querySelectorAll(".dropdown-btn");
+      dropdowns.forEach(btn => {
+        btn.addEventListener("click", function () {
+          this.classList.toggle("active");
+          const dropdownContent = this.nextElementSibling;
+          const isVisible = dropdownContent.style.display === "block";
+          dropdownContent.style.display = isVisible ? "none" : "block";
+          this.textContent = isVisible ? "Stones ▸" : "Stones ▼";
+        });
+      });
+    });
+  </script>
 </body>
 </html>
