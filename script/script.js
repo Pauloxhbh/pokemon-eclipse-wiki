@@ -14,4 +14,13 @@ document.addEventListener("DOMContentLoaded", function () {
         overlay.classList.remove('active');
         document.body.classList.remove('menu-open');
     });
+
+    // ✅ Fecha o menu ao clicar em um link
+    document.querySelectorAll('#sidebar a').forEach(link => {
+        link.addEventListener('click', () => {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        });
+    });
 });
