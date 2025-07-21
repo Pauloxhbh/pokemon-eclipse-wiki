@@ -11,6 +11,9 @@ body {
   background-size: cover;
   line-height: 1.6;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Overlay para escurecer o background e destacar o conteúdo */
@@ -33,7 +36,8 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative; /* Garante o contexto para o z-index do botão */
+  position: relative; 
+  z-index: 1002;
 }
 
 #main-header h1 {
@@ -46,7 +50,6 @@ body::before {
   border: none;
   color: white;
   cursor: pointer;
-  z-index: 1002; /* Garante que o botão fique acima de tudo */
 }
 
 /* Sidebar */
@@ -128,10 +131,16 @@ body.menu-open {
   overflow: hidden;
 }
 
+.main-layout {
+    flex: 1;
+    display: flex;
+}
+
 /* Conteúdo principal com fundo translúcido */
 #content {
   margin: 2rem;
   padding: 1rem;
+  flex-grow: 1;
 }
 
 section {
@@ -155,25 +164,30 @@ section {
   text-decoration: underline;
 }
 
+/* === REGRAS DO RODAPÉ ATUALIZADAS === */
+#main-footer {
+    background-color: #1a1a1a;
+    color: #FFD700; /* Cor amarela/dourada */
+    text-align: center; /* Texto centralizado */
+    padding: 1rem;
+}
+
 /* Responsivo */
 @media (min-width: 768px) {
-  .main-layout {
-    display: flex;
-    align-items: flex-start;
-  }
-  
   #sidebar {
     position: relative;
     width: 250px;
-    height: 100vh;
+    height: auto;
+    min-height: 100%;
   }
 
   #overlay {
     display: none !important;
   }
 
+  /* === BOTÃO SÓ SOME EM TELAS REALMENTE GRANDES AGORA === */
   #menu-toggle {
-    display: none;
+    display: none; 
   }
 
   body.menu-open {
@@ -182,11 +196,6 @@ section {
 
   #main-header {
     justify-content: center;
-  }
-  
-  #content {
-    flex-grow: 1;
-    margin: 2rem;
   }
 }
 
