@@ -34,7 +34,7 @@ body {
   cursor: pointer;
 }
 
-/* Sidebar oculto por padrão */
+/* Sidebar */
 #sidebar {
   position: fixed;
   left: -260px;
@@ -105,22 +105,23 @@ body {
   display: block;
 }
 
-/* Evita rolagem quando menu está aberto */
+/* Quando o menu está aberto */
 body.menu-open {
   overflow: hidden;
 }
 
-/* Conteúdo principal */
+/* Conteúdo principal com fundo translúcido */
 #content {
   margin: 2rem;
   padding-left: 1rem;
 }
 
 section {
-  background: white;
+  background: rgba(0, 0, 0, 0.7); /* Transparente */
   padding: 1rem;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  color: white;
 }
 
 /* Responsivo */
@@ -151,4 +152,4 @@ section {
   #main-header {
     justify-content: center;
   }
-  }
+}
