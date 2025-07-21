@@ -184,6 +184,10 @@ section {
     min-height: 100%;
   }
 
+  .evolution-cards-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas no PC */
+  }
+
   #overlay {
     display: none !important;
   }
@@ -219,7 +223,7 @@ section {
 /* Estilo para imagem do item na Wiki */
 .wiki-item-image {
   float: right;
-  width: 150px;
+  width: 120px; /* Diminuí um pouco a imagem */
   margin-left: 20px;
   margin-bottom: 15px;
 }
@@ -231,51 +235,41 @@ section {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-/* Estilos para os Cards de Evolução */
+/* === ESTILOS ATUALIZADOS PARA OS CARDS DE EVOLUÇÃO === */
+
 .evolution-cards-container {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas por padrão em telas menores */
+  gap: 1rem;
 }
 
 .pokemon-evolution-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background-color: rgba(0, 0, 0, 0.4);
   border: 1px solid #555;
   border-radius: 8px;
   padding: 1rem;
-  margin-bottom: 1rem;
-}
-
-.pokemon-info {
-  display: flex;
-  align-items: center;
-  gap: 15px; /* Espaço entre o ícone e o nome */
+  text-align: center;
 }
 
 .pokemon-icon {
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 0.5rem;
 }
 
 .pokemon-name {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
 .stone-cost {
-  display: flex;
-  align-items: center;
-  gap: 8px; /* Espaço entre a quantidade e o ícone da stone */
-}
-
-.stone-quantity {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #FFD700; /* Cor amarela para o custo */
+  color: #FFD700;
 }
-
-.stone-icon {
-  width: 24px;
-  height: 24px;
-  }
