@@ -37,7 +37,7 @@ body {
 /* Sidebar */
 #sidebar {
   position: fixed;
-  left: -260px;
+  left: -240px; /* CORRIGIDO */
   top: 0;
   width: 240px;
   height: 100%;
@@ -46,6 +46,7 @@ body {
   transition: left 0.3s ease;
   z-index: 1001;
   padding: 1rem;
+  overflow-y: auto; /* Adicionado para permitir rolagem se o menu for grande */
 }
 
 #sidebar.open {
@@ -81,6 +82,8 @@ body {
   width: 100%;
   padding: 0;
   font-size: 1rem;
+  display: flex; /* ADICIONADO */
+  align-items: center; /* ADICIONADO */
 }
 
 .dropdown-container {
@@ -113,12 +116,12 @@ body.menu-open {
 /* Conteúdo principal com fundo translúcido */
 #content {
   margin: 2rem;
-  padding-left: 1rem;
+  padding: 1rem;
 }
 
 section {
   background: rgba(0, 0, 0, 0.7); /* Transparente */
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   color: white;
@@ -126,15 +129,16 @@ section {
 
 /* Responsivo */
 @media (min-width: 768px) {
+  .main-layout { /* ADICIONADO */
+    display: flex;
+    align-items: flex-start;
+  }
+  
   #sidebar {
     left: 0;
     position: relative;
     width: 250px;
-    height: auto;
-  }
-
-  #sidebar.open {
-    left: 0;
+    height: 100vh; /* Ocupa a altura total da tela */
   }
 
   #overlay {
@@ -152,4 +156,24 @@ section {
   #main-header {
     justify-content: center;
   }
+  
+  #content {
+    flex-grow: 1; /* Ocupa o espaço restante */
+    margin: 2rem; /* Mantém a margem nas 4 direções */
+  }
+}
+
+/* NOVAS REGRAS PARA FUNCIONALIDADE DO DROPDOWN */
+.dropdown-btn::before {
+  content: '▸';
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-btn.rotate::before {
+  transform: rotate(90deg);
+}
+
+.dropdown-container.show {
+  display: block;
 }
