@@ -10,6 +10,19 @@ body {
   background: url('https://i.imgur.com/TgcNnnF.png') no-repeat center center fixed;
   background-size: cover;
   line-height: 1.6;
+  position: relative; /* ADICIONADO para o overlay do background */
+}
+
+/* Overlay para escurecer o background e destacar o conteúdo */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Ajuste este último valor (0.4) para mais ou menos escuro */
+  z-index: -1;
 }
 
 /* Cabeçalho */
@@ -37,7 +50,7 @@ body {
 /* Sidebar */
 #sidebar {
   position: fixed;
-  left: -240px; /* CORRIGIDO */
+  left: -240px;
   top: 0;
   width: 240px;
   height: 100%;
@@ -46,7 +59,7 @@ body {
   transition: left 0.3s ease;
   z-index: 1001;
   padding: 1rem;
-  overflow-y: auto; /* Adicionado para permitir rolagem se o menu for grande */
+  overflow-y: auto;
 }
 
 #sidebar.open {
@@ -82,8 +95,8 @@ body {
   width: 100%;
   padding: 0;
   font-size: 1rem;
-  display: flex; /* ADICIONADO */
-  align-items: center; /* ADICIONADO */
+  display: flex;
+  align-items: center;
 }
 
 .dropdown-container {
@@ -92,7 +105,7 @@ body {
   padding-left: 1rem;
 }
 
-/* Overlay */
+/* Overlay do Menu */
 #overlay {
   position: fixed;
   display: none;
@@ -120,25 +133,38 @@ body.menu-open {
 }
 
 section {
-  background: rgba(0, 0, 0, 0.7); /* Transparente */
+  background: rgba(0, 0, 0, 0.7);
   padding: 1.5rem;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   color: white;
 }
 
+/* === NOVA REGRA ADICIONADA === */
+/* Estilo para links no conteúdo principal */
+#content a,
+#content a:visited {
+  color: #FFD700; /* Tom de dourado. Pode usar "yellow" se preferir. */
+  text-decoration: none; /* Remove o sublinhado padrão */
+  transition: color 0.2s ease;
+}
+
+#content a:hover {
+  color: #FFFF99; /* Tom de amarelo mais claro para o efeito hover */
+  text-decoration: underline;
+}
+
 /* Responsivo */
 @media (min-width: 768px) {
-  .main-layout { /* ADICIONADO */
+  .main-layout {
     display: flex;
     align-items: flex-start;
   }
   
   #sidebar {
-    left: 0;
     position: relative;
     width: 250px;
-    height: 100vh; /* Ocupa a altura total da tela */
+    height: 100vh;
   }
 
   #overlay {
@@ -158,12 +184,12 @@ section {
   }
   
   #content {
-    flex-grow: 1; /* Ocupa o espaço restante */
-    margin: 2rem; /* Mantém a margem nas 4 direções */
+    flex-grow: 1;
+    margin: 2rem;
   }
 }
 
-/* NOVAS REGRAS PARA FUNCIONALIDADE DO DROPDOWN */
+/* Regras para funcionalidade do Dropdown */
 .dropdown-btn::before {
   content: '▸';
   margin-right: 8px;
