@@ -10,7 +10,7 @@ body {
   background: url('https://i.imgur.com/TgcNnnF.png') no-repeat center center fixed;
   background-size: cover;
   line-height: 1.6;
-  position: relative; /* ADICIONADO para o overlay do background */
+  position: relative;
 }
 
 /* Overlay para escurecer o background e destacar o conteúdo */
@@ -21,7 +21,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* Ajuste este último valor (0.4) para mais ou menos escuro */
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: -1;
 }
 
@@ -33,6 +33,7 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative; /* Garante o contexto para o z-index do botão */
 }
 
 #main-header h1 {
@@ -45,6 +46,7 @@ body::before {
   border: none;
   color: white;
   cursor: pointer;
+  z-index: 1002; /* Garante que o botão fique acima de tudo */
 }
 
 /* Sidebar */
@@ -140,17 +142,16 @@ section {
   color: white;
 }
 
-/* === NOVA REGRA ADICIONADA === */
 /* Estilo para links no conteúdo principal */
 #content a,
 #content a:visited {
-  color: #FFD700; /* Tom de dourado. Pode usar "yellow" se preferir. */
-  text-decoration: none; /* Remove o sublinhado padrão */
+  color: #FFD700;
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 
 #content a:hover {
-  color: #FFFF99; /* Tom de amarelo mais claro para o efeito hover */
+  color: #FFFF99;
   text-decoration: underline;
 }
 
