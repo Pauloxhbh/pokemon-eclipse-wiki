@@ -1,33 +1,45 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const toggle = document.getElementById('menu-toggle');
-  const sidebar = document.getElementById('sidebar');
-  const overlay = document.getElementById('overlay');
+  const menuToggle = document.getElementById("menu-toggle");
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("overlay");
+  const body = document.body;
 
-  // Abre/fecha o menu lateral
-  if (toggle && sidebar && overlay) {
-    toggle.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
-      overlay.classList.toggle('active');
-      document.body.classList.toggle('menu-open');
-    });
-
-    // Fecha o menu ao clicar fora (overlay)
-    overlay.addEventListener('click', () => {
-      sidebar.classList.remove('open');
-      overlay.classList.remove('active');
-      document.body.classList.remove('menu-open');
-    });
+  function closeMenu() {
+    sidebar.classList.remove("open");
+    overlay.classList.remove("active");
+    body.classList.remove("menu-open");
   }
 
-  // Dropdown de Stones
-  const dropdowns = document.querySelectorAll(".dropdown-btn");
-  dropdowns.forEach(btn => {
+  // Abrir/Fechar menu
+  menuToggle.addEventListener("click", function () {
+    sidebar.classList.toggle("open");
+    overlay.classList.toggle("active");
+    body.classList.toggle("menu-open");
+  });
+
+  // Fechar menu ao clicar no overlay
+  overlay.addEventListener("click", closeMenu);
+
+  // Lógica para todos os Dropdowns
+  const dropdownBtns = document.querySelectorAll(".dropdown-btn");
+
+  dropdownBtns.forEach(btn => {
     btn.addEventListener("click", function () {
-      this.classList.toggle("active");
-      const dropdownContent = this.nextElementSibling;
-      const isVisible = dropdownContent.style.display === "block";
-      dropdownContent.style.display = isVisible ? "none" : "block";
-      this.textContent = isVisible ? "Stones ▸" : "Stones ▼";
+      // Encontra o container do dropdown (o próximo elemento irmão)
+      const dropdownContainer = this.nextElementSibling;
+      
+      // Fecha outros dropdowns que possam estar abertos (bom para experiência do usuário)
+      document.querySelectorAll('.dropdown-container.show').forEach(openContainer => {
+        if (openContainer !== dropdownContainer) {
+          openContainer.classList.remove('show');
+          // Remove também a classe de rotação do botão correspondente
+          openContainer.previousElementSibling.classList.remove('rotate');
+        }
+      });
+
+      // Alterna a exibição do dropdown atual e a rotação do botão
+      dropdownContainer.classList.toggle("show");
+      this.classList.toggle("rotate");
     });
   });
 });
