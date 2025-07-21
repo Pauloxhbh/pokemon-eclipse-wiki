@@ -50,6 +50,7 @@ body::before {
   border: none;
   color: white;
   cursor: pointer;
+  position: relative;
 }
 
 /* Sidebar */
@@ -164,18 +165,19 @@ section {
   text-decoration: underline;
 }
 
-/* === REGRAS DO RODAPÉ ATUALIZADAS === */
+/* Regras do Rodapé */
 #main-footer {
     background-color: #1a1a1a;
-    color: #FFD700; /* Cor amarela/dourada */
-    text-align: center; /* Texto centralizado */
+    color: #FFD700;
+    text-align: center;
     padding: 1rem;
 }
 
 /* Responsivo */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   #sidebar {
     position: relative;
+    left: 0; /* <<< ESSA É A LINHA QUE FALTAVA PARA CORRIGIR TUDO */
     width: 250px;
     height: auto;
     min-height: 100%;
@@ -185,7 +187,6 @@ section {
     display: none !important;
   }
 
-  /* === BOTÃO SÓ SOME EM TELAS REALMENTE GRANDES AGORA === */
   #menu-toggle {
     display: none; 
   }
