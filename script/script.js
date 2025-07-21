@@ -10,6 +10,13 @@ document.addEventListener("DOMContentLoaded", function () {
       overlay.classList.toggle('active');
       document.body.classList.toggle('menu-open');
     });
+
+    // Fecha o menu ao clicar fora (overlay)
+    overlay.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('active');
+      document.body.classList.remove('menu-open');
+    });
   }
 
   // Dropdown de Stones
