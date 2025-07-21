@@ -150,6 +150,7 @@ section {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   color: white;
+  overflow: hidden; 
 }
 
 /* Estilo para links no conteúdo principal */
@@ -177,7 +178,7 @@ section {
 @media (min-width: 1024px) {
   #sidebar {
     position: relative;
-    left: 0; /* <<< ESSA É A LINHA QUE FALTAVA PARA CORRIGIR TUDO */
+    left: 0;
     width: 250px;
     height: auto;
     min-height: 100%;
@@ -214,3 +215,67 @@ section {
 .dropdown-container.show {
   display: block;
 }
+
+/* Estilo para imagem do item na Wiki */
+.wiki-item-image {
+  float: right;
+  width: 150px;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.wiki-item-image img {
+  width: 100%;
+  border: 3px solid #444;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para os Cards de Evolução */
+.evolution-cards-container {
+  margin-top: 1rem;
+}
+
+.pokemon-evolution-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid #555;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.pokemon-info {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espaço entre o ícone e o nome */
+}
+
+.pokemon-icon {
+  width: 56px;
+  height: 56px;
+}
+
+.pokemon-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.stone-cost {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espaço entre a quantidade e o ícone da stone */
+}
+
+.stone-quantity {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #FFD700; /* Cor amarela para o custo */
+}
+
+.stone-icon {
+  width: 24px;
+  height: 24px;
+  }
