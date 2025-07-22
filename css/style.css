@@ -185,7 +185,7 @@ section {
   }
 
   .evolution-cards-container, .item-cards-container {
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas no PC */
+    grid-template-columns: repeat(3, 1fr);
   }
 
   #overlay {
@@ -273,7 +273,7 @@ section {
   color: #FFD700;
 }
 
-/* === NOVOS ESTILOS PARA OS CARDS DE ITENS === */
+/* Estilos para os Cards de Itens */
 .item-cards-container {
   margin-top: 1.5rem;
   display: grid;
@@ -289,7 +289,7 @@ section {
 
 @media (min-width: 1200px) {
   .item-cards-container {
-    grid-template-columns: repeat(4, 1fr); /* 4 colunas em telas bem largas */
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -318,4 +318,48 @@ section {
 
 .item-card p {
   font-size: 1rem;
-    }
+}
+
+/* === NOVOS ESTILOS PARA O CARD DE DESTAQUE E DIVISOR === */
+.feature-item-card {
+  display: flex;
+  flex-wrap: wrap; /* Permite quebrar a linha em telas pequenas */
+  align-items: center;
+  gap: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #666;
+  margin: 2rem 0;
+}
+
+.feature-item-image {
+  flex-shrink: 0;
+  width: 120px;
+}
+
+.feature-item-image img {
+  width: 100%;
+  height: auto;
+}
+
+.feature-item-description {
+  flex-grow: 1;
+}
+
+.feature-item-description h3 {
+  color: #FFD700;
+  margin-bottom: 0.5rem;
+}
+
+.feature-item-description ul {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+hr.section-divider {
+  border: none;
+  height: 1px;
+  background-color: #444;
+  margin: 2rem 0;
+  }
