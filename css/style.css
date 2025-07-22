@@ -1,5 +1,5 @@
 /* Reset básico */
-body, h1, h2, h3, ul, li, p {
+body, h1, h2, h3, h4, ul, li, p {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -240,7 +240,7 @@ section {
   margin-top: 1.5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .pokemon-evolution-card {
@@ -277,19 +277,19 @@ section {
 .item-cards-container {
   margin-top: 1.5rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  grid-template-columns: 1fr; /* 1 coluna no mobile */
+  gap: 1.5rem;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .item-cards-container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
   }
 }
 
 @media (min-width: 1200px) {
   .item-cards-container {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas largas */
   }
 }
 
@@ -300,7 +300,7 @@ section {
   background-color: rgba(0, 0, 0, 0.4);
   border: 1px solid #555;
   border-radius: 8px;
-  padding: 1rem;
+  padding: 1.5rem;
   text-align: center;
 }
 
@@ -311,19 +311,48 @@ section {
 }
 
 .item-card h3 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #FFD700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
-.item-card p {
+.item-card .item-description {
+  font-style: italic;
+  color: #ccc;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.item-obtainment-info {
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.item-obtainment-info h4 {
   font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
 }
 
-/* === NOVOS ESTILOS PARA O CARD DE DESTAQUE E DIVISOR === */
+.item-obtainment-info ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.item-obtainment-info ul li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.item-obtainment-info ul li strong {
+  color: #FFD700;
+}
+
+/* Estilos para o Card de Destaque e Divisor */
 .feature-item-card {
   display: flex;
-  flex-wrap: wrap; /* Permite quebrar a linha em telas pequenas */
+  flex-wrap: wrap;
   align-items: center;
   gap: 1.5rem;
   background-color: rgba(0, 0, 0, 0.2);
@@ -362,4 +391,4 @@ hr.section-divider {
   height: 1px;
   background-color: #444;
   margin: 2rem 0;
-  }
+}
