@@ -184,7 +184,7 @@ section {
     min-height: 100%;
   }
 
-  .evolution-cards-container {
+  .evolution-cards-container, .item-cards-container {
     grid-template-columns: repeat(3, 1fr); /* 3 colunas no PC */
   }
 
@@ -223,7 +223,7 @@ section {
 /* Estilo para imagem do item na Wiki */
 .wiki-item-image {
   float: right;
-  width: 120px; /* Diminuí um pouco a imagem */
+  width: 120px;
   margin-left: 20px;
   margin-bottom: 15px;
 }
@@ -235,12 +235,11 @@ section {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-/* === ESTILOS ATUALIZADOS PARA OS CARDS DE EVOLUÇÃO === */
-
+/* Estilos para os Cards de Evolução */
 .evolution-cards-container {
   margin-top: 1.5rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 colunas por padrão em telas menores */
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
 
@@ -273,3 +272,50 @@ section {
   font-weight: bold;
   color: #FFD700;
 }
+
+/* === NOVOS ESTILOS PARA OS CARDS DE ITENS === */
+.item-cards-container {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 600px) {
+  .item-cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .item-cards-container {
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas em telas bem largas */
+  }
+}
+
+.item-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid #555;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.item-card img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1rem;
+}
+
+.item-card h3 {
+  font-size: 1.1rem;
+  color: #FFD700;
+  margin-bottom: 0.5rem;
+}
+
+.item-card p {
+  font-size: 1rem;
+    }
