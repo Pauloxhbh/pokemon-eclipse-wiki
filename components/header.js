@@ -3,9 +3,10 @@ class Header extends HTMLElement {
     super();
 
     const shadow = this.attachShadow({ mode: 'open' });
+    const pagesOrigin = window.location.origin == "https://pauloxhbh.github.io" ? window.location.origin + "/pokemon-eclipse-wiki" : window.location.origin
 
     shadow.innerHTML = `
-      <link rel="stylesheet" href="../css/style.css" />
+      <link rel="stylesheet" href="${pagesOrigin}/css/style.css" />
       <header id="main-header">
         <button id="menu-toggle" aria-label="Abrir menu de navegação">&#9776;</button>
         <h1>Pokemon Eclipse Wiki</h1>
