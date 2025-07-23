@@ -9,13 +9,13 @@ class Sidebar extends HTMLElement {
       <nav id="sidebar">
         <ul>
           <li><strong>Navegação Rápida</strong></li>
-          <li><a href="../index.html">Início</a></li>
-          <li><a href="../pages/tutorial.html">Tutorial</a></li>
-          <li><a href="../pages/quests.html">Quests</a></li>
-          <li><a href="../pages/items.html">Itens e Equipamentos</a></li>
-          <li><a href="../pages/catches.html">Pokémons de Catch</a></li>
-          <li><a href="../pages/tower.html">Tower</a></li>
-          <li><a href="../pages/tier.html">Tiers dos Pokémons</a></li>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="pages/tutorial.html">Tutorial</a></li>
+          <li><a href="pages/quests.html">Quests</a></li>
+          <li><a href="pages/items.html">Itens e Equipamentos</a></li>
+          <li><a href="pages/catches.html">Pokémons de Catch</a></li>
+          <li><a href="pages/tower.html">Tower</a></li>
+          <li><a href="pages/tier.html">Tiers dos Pokémons</a></li>
           <li>
             <button class="dropdown-btn">Stones</button>
             <ul class="dropdown-container">
