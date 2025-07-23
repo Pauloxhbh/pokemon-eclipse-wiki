@@ -34,11 +34,11 @@ class Sidebar extends HTMLElement {
     const allLinks = shadow.querySelectorAll('a');
     const sidebar = shadow.getElementById("sidebar");
     const dropdownLinks = dropdownContainer.querySelectorAll('a');
-    const currentPath = window.location.pathname.split('/').pop(); // ex: "cell_stone.html"
+    const currentPath = window.location.pathname.split('/').pop(); 
 
     allLinks.forEach(link => {
       const href = link.getAttribute('href');
-      const hrefFile = href.split('/').pop(); // ex: "cell_stone.html"
+      const hrefFile = href.split('/').pop(); 
 
       if (href.includes("pages") && (currentPath === hrefFile)) {
         link.classList.add('active');
