@@ -4,26 +4,27 @@ class Sidebar extends HTMLElement {
 
     const shadow = this.attachShadow({ mode: 'open' });
     const currentPath = window.location.pathname.split('/').pop(); 
+    const pagesOrigin = window.location.origin == "https://pauloxhbh.github.io" ? window.location.origin + "/pokemon-eclipse-wiki" : window.location.origin
 
     shadow.innerHTML = `
-      <link rel="stylesheet" href="${window.location.origin}/css/style.css" /> 
+      <link rel="stylesheet" href="${pagesOrigin}/css/style.css" /> 
       <nav id="sidebar">  
         <ul>
           <li><strong>Navegação Rápida</strong></li>
-          <li><a href="${window.location.origin}/index.html">Início</a></li>
-          <li><a href="${window.location.origin}/pages/tutorial.html">Tutorial</a></li>
-          <li><a href="${window.location.origin}/pages/quests.html">Quests</a></li>
-          <li><a href="${window.location.origin}/pages/items.html">Itens e Equipamentos</a></li>
-          <li><a href="${window.location.origin}/pages/catches.html">Pokémons de Catch</a></li>
-          <li><a href="${window.location.origin}/pages/tower.html">Tower</a></li>
-          <li><a href="${window.location.origin}/pages/tier.html">Tiers dos Pokémons</a></li>
+          <li><a href="${pagesOrigin}/index.html">Início</a></li>
+          <li><a href="${pagesOrigin}/pages/tutorial.html">Tutorial</a></li>
+          <li><a href="${pagesOrigin}/pages/quests.html">Quests</a></li>
+          <li><a href="${pagesOrigin}/pages/items.html">Itens e Equipamentos</a></li>
+          <li><a href="${pagesOrigin}/pages/catches.html">Pokémons de Catch</a></li>
+          <li><a href="${pagesOrigin}/pages/tower.html">Tower</a></li>
+          <li><a href="${pagesOrigin}/pages/tier.html">Tiers dos Pokémons</a></li>
           <li>
             <button class="dropdown-btn">Stones</button>
             <ul class="dropdown-container">
-              <li><a href="${window.location.origin}/pages/shiny_stone.html">Shiny Stone</a></li>
-              <li><a href="${window.location.origin}/pages/black_stone.html">Black Stone</a></li>
-              <li><a href="${window.location.origin}/pages/mega_stone.html">Mega Stone</a></li>
-              <li><a href="${window.location.origin}/pages/cell_stone.html">Cell Stone</a></li>
+              <li><a href="${pagesOrigin}/pages/shiny_stone.html">Shiny Stone</a></li>
+              <li><a href="${pagesOrigin}/pages/black_stone.html">Black Stone</a></li>
+              <li><a href="${pagesOrigin}/pages/mega_stone.html">Mega Stone</a></li>
+              <li><a href="${pagesOrigin}/pages/cell_stone.html">Cell Stone</a></li>
             </ul>
           </li>
         </ul>
