@@ -19,10 +19,10 @@ class Sidebar extends HTMLElement {
           <li>
             <button class="dropdown-btn">Stones</button>
             <ul class="dropdown-container">
-              <li><a href="../pages/shiny_stone.html">Shiny Stone</a></li>
-              <li><a href="../pages/black_stone.html">Black Stone</a></li>
-              <li><a href="../pages/mega_stone.html">Mega Stone</a></li>
-              <li><a href="../pages/cell_stone.html">Cell Stone</a></li>
+              <li><a href="pages/shiny_stone.html">Shiny Stone</a></li>
+              <li><a href="pages/black_stone.html">Black Stone</a></li>
+              <li><a href="pages/mega_stone.html">Mega Stone</a></li>
+              <li><a href="pages/cell_stone.html">Cell Stone</a></li>
             </ul>
           </li>
         </ul>
