@@ -7,13 +7,26 @@ body, h1, h2, h3, h4, ul, li, p {
 
 body {
   font-family: Arial, sans-serif;
-  background: url('https://i.imgur.com/TgcNnnF.png') no-repeat center center fixed;
-  background-size: cover;
   line-height: 1.6;
   position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: #1a1a1a;
+}
+
+/* ESTILO PARA O FUNDO DE PARTÍCULAS */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url('https://i.imgur.com/TgcNnnF.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: -2;
 }
 
 /* Overlay para escurecer o background e destacar o conteúdo */
@@ -145,10 +158,13 @@ body.menu-open {
 }
 
 section {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(20, 20, 20, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 1.5rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   color: white;
   overflow: hidden; 
 }
@@ -235,6 +251,24 @@ section {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+/* Animações Interativas nos Cards */
+.item-card,
+.pokemon-evolution-card,
+.tutorial-step-card,
+.feature-item-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  border: 1px solid #555; /* Borda padrão um pouco mais visível */
+}
+
+.item-card:hover,
+.pokemon-evolution-card:hover,
+.tutorial-step-card:hover,
+.feature-item-card:hover {
+  transform: translateY(-5px); /* Efeito de levitar */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  border-color: #FFD700;
+}
+
 /* Estilos para os Cards de Evolução */
 .evolution-cards-container {
   margin-top: 1.5rem;
@@ -247,12 +281,12 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: rgba(0, 0, 0, 0.4);
-  border: 1px solid #555;
   border-radius: 8px;
   padding: 1rem;
   text-align: center;
+  min-height: 150px;
 }
 
 .pokemon-icon {
@@ -265,6 +299,7 @@ section {
   font-size: 1.1rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  flex-grow: 1;
 }
 
 .stone-cost {
@@ -298,7 +333,6 @@ section {
   flex-direction: column;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.4);
-  border: 1px solid #555;
   border-radius: 8px;
   padding: 1.5rem;
   text-align: center;
@@ -321,6 +355,7 @@ section {
   color: #ccc;
   margin-bottom: 1rem;
   font-size: 0.9rem;
+  flex-grow: 1;
 }
 
 .item-obtainment-info {
@@ -358,7 +393,6 @@ section {
   background-color: rgba(0, 0, 0, 0.2);
   padding: 1.5rem;
   border-radius: 8px;
-  border: 1px solid #666;
   margin: 2rem 0;
 }
 
@@ -443,3 +477,29 @@ hr.section-divider {
   opacity: 0;
   visibility: hidden;
 }
+
+/* Estilos para Botões e Links nos Cards de Destaque */
+.card-links {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.wiki-button {
+  display: inline-block;
+  background-color: #FFD700;
+  color: #1a1a1a;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.wiki-button:hover {
+  background-color: #FFFF99;
+  color: #1a1a1a;
+  transform: scale(1.05);
+  }
