@@ -239,14 +239,16 @@ section {
 
 /* Estilo para imagem do item na Wiki */
 .wiki-item-image {
-  float: right;
-  width: 120px;
-  margin-left: 20px;
-  margin-bottom: 15px;
+  width: 100%;
+  img {
+    float: right;
+    width: 120px;
+    margin-left: 120px;
+    margin-bottom: 15px;
+  }
 }
 
 .wiki-item-image img {
-  width: 100%;
   border: 3px solid #444;
   border-radius: 8px;
   background-color: rgba(0, 0, 0, 0.3);
