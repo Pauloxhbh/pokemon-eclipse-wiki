@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: transparent; 
+  background-color: transparent;
 }
 
 /* ESTILO PARA O FUNDO DE PARTÍCULAS */
@@ -50,7 +50,7 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative; 
+  position: relative;
   z-index: 1002;
 }
 
@@ -147,8 +147,8 @@ body.menu-open {
 }
 
 .main-layout {
-    flex: 1;
-    display: flex;
+  flex: 1;
+  display: flex;
 }
 
 /* Conteúdo principal com fundo translúcido */
@@ -167,7 +167,7 @@ section {
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   color: white;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 /* Estilo para links no conteúdo principal */
@@ -185,10 +185,10 @@ section {
 
 /* Regras do Rodapé */
 #main-footer {
-    background-color: #1a1a1a;
-    color: #FFD700;
-    text-align: center;
-    padding: 1rem;
+  background-color: #1a1a1a;
+  color: #FFD700;
+  text-align: center;
+  padding: 1rem;
 }
 
 /* Responsivo */
@@ -210,7 +210,7 @@ section {
   }
 
   #menu-toggle {
-    display: none; 
+    display: none;
   }
 
   body.menu-open {
@@ -323,6 +323,13 @@ section {
   }
 }
 
+.pokeballs-of-pokemon {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
 @media (min-width: 1200px) {
   .item-cards-container {
     grid-template-columns: repeat(3, 1fr);
@@ -412,7 +419,8 @@ section {
 }
 
 .feature-item-description h3 {
-  color: #ffffff; /* ATUALIZADO: Título do card de branco para melhor contraste */
+  color: #ffffff;
+  /* ATUALIZADO: Título do card de branco para melhor contraste */
   margin-bottom: 0.5rem;
 }
 
@@ -469,6 +477,7 @@ hr.section-divider {
   from {
     transform: translateY(100%);
   }
+
   to {
     transform: translateY(-100%);
   }
@@ -489,9 +498,12 @@ hr.section-divider {
 
 .wiki-button {
   display: inline-block;
-  background-color: rgba(0, 0, 0, 0.3); /* ATUALIZADO: Fundo escuro */
-  color: #FFD700; /* ATUALIZADO: Texto amarelo */
-  border: 1px solid #FFD700; /* ATUALIZADO: Borda amarela */
+  background-color: rgba(0, 0, 0, 0.3);
+  /* ATUALIZADO: Fundo escuro */
+  color: #FFD700;
+  /* ATUALIZADO: Texto amarelo */
+  border: 1px solid #FFD700;
+  /* ATUALIZADO: Borda amarela */
   padding: 8px 15px;
   border-radius: 5px;
   text-decoration: none;
@@ -501,6 +513,7 @@ hr.section-divider {
 }
 
 .wiki-button:hover {
-  background-color: #FFD700; /* ATUALIZADO: Inverte as cores no hover */
+  background-color: #FFD700;
+  /* ATUALIZADO: Inverte as cores no hover */
   color: #1a1a1a;
-  }
+}

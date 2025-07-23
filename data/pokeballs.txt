@@ -1,0 +1,77 @@
+POKEBALLS = {
+    ["master ball"] = {
+        pontos = 1000,
+        descricao = "Melhor pokeball do jogo",
+        tipos = {"todos"}
+    },
+    ["divine ball"] = {
+        pontos = 50,
+        descricao = "Única Pokebola que pode usar nas ascensões divinas",
+        tipos = {"todos"}
+    },
+    ["especial ball"] = {
+        pontos = 15,
+        tipos = {"todos"}
+    },
+    ["moon ball"] = {
+        pontos = 10,
+        tipos = {"dark", "ghost"}
+    },
+    ["tinker ball"] = {
+        pontos = 10,
+        tipos = {"electric", "steel"}
+    },
+    ["sora ball"] = {
+        pontos = 10,
+        tipos = {"ice", "fly"}
+    },
+    ["dusk ball"] = {
+        pontos = 10,
+        tipos = {"rock", "fighting"}
+    },
+    ["yume ball"] = {
+        pontos = 10,
+        tipos = {"psychic", "normal"}
+    },
+    ["tale ball"] = {
+        pontos = 10,
+        tipos = {"fairy", "dragon"}
+    },
+    ["net ball"] = {
+        pontos = 10,
+        tipos = {"bug", "water"}
+    },
+    ["janguru ball"] = {
+        pontos = 10,
+        tipos = {"poison", "leaf"}
+    },
+    ["magu ball"] = {
+        pontos = 10,
+        tipos = {"fire", "ground"}
+    },
+    ["fast ball"] = {
+        pontos = 6,
+        descricao = "Superior a ultra ball",
+        tipos = {"todos"}
+    },
+    ["heavy ball"] = {
+        pontos = 6,
+        descricao = "Superior a ultra ball",
+        tipos = {"todos"}
+    },
+    ["ultra ball"] = {
+        pontos = 4,
+        descricao = "Superior à great ball",
+        tipos = {"todos"}
+    },
+    ["great ball"] = {
+        pontos = 2,
+        descricao = "Superior à poke ball",
+        tipos = {"todos"}
+    },
+    ["poke ball"] = {
+        pontos = 1,
+        descricao = "Poke ball mais básica do jogo",
+        tipos = {"todos"}
+    }
+}
