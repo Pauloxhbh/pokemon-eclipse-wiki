@@ -25,7 +25,7 @@ body {
   background-color: #1a1a1a;
   background-image: url('https://i.imgur.com/TgcNnnF.png');
   background-repeat: no-repeat;
-  background-size: contain; /* ALTERADO DE 'cover' PARA 'contain' */
+  background-size: contain;
   background-position: 50% 50%;
   z-index: -2;
 }
@@ -412,7 +412,7 @@ section {
 }
 
 .feature-item-description h3 {
-  color: #FFD700;
+  color: #ffffff; /* ATUALIZADO: Título do card de branco para melhor contraste */
   margin-bottom: 0.5rem;
 }
 
@@ -489,18 +489,18 @@ hr.section-divider {
 
 .wiki-button {
   display: inline-block;
-  background-color: #FFD700;
-  color: #1a1a1a;
+  background-color: rgba(0, 0, 0, 0.3); /* ATUALIZADO: Fundo escuro */
+  color: #FFD700; /* ATUALIZADO: Texto amarelo */
+  border: 1px solid #FFD700; /* ATUALIZADO: Borda amarela */
   padding: 8px 15px;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
   font-size: 0.9rem;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .wiki-button:hover {
-  background-color: #FFFF99;
+  background-color: #FFD700; /* ATUALIZADO: Inverte as cores no hover */
   color: #1a1a1a;
-  transform: scale(1.05);
   }
