@@ -3,27 +3,27 @@ class Sidebar extends HTMLElement {
     super();
 
     const shadow = this.attachShadow({ mode: 'open' });
+    const currentPath = window.location.pathname.split('/').pop(); 
 
     shadow.innerHTML = `
-      <link rel="stylesheet" href="../css/style.css" /> 
-      <link rel="stylesheet" href="./css/style.css" /> 
+      <link rel="stylesheet" href="${window.location.origin}/css/style.css" /> 
       <nav id="sidebar">  
         <ul>
           <li><strong>Navegação Rápida</strong></li>
-          <li><a href="../index.html">Início</a></li>
-          <li><a href="../pages/tutorial.html">Tutorial</a></li>
-          <li><a href="../pages/quests.html">Quests</a></li>
-          <li><a href="../pages/items.html">Itens e Equipamentos</a></li>
-          <li><a href="../pages/catches.html">Pokémons de Catch</a></li>
-          <li><a href="../pages/tower.html">Tower</a></li>
-          <li><a href="../pages/tier.html">Tiers dos Pokémons</a></li>
+          <li><a href="${window.location.origin}/index.html">Início</a></li>
+          <li><a href="${window.location.origin}/pages/tutorial.html">Tutorial</a></li>
+          <li><a href="${window.location.origin}/pages/quests.html">Quests</a></li>
+          <li><a href="${window.location.origin}/pages/items.html">Itens e Equipamentos</a></li>
+          <li><a href="${window.location.origin}/pages/catches.html">Pokémons de Catch</a></li>
+          <li><a href="${window.location.origin}/pages/tower.html">Tower</a></li>
+          <li><a href="${window.location.origin}/pages/tier.html">Tiers dos Pokémons</a></li>
           <li>
             <button class="dropdown-btn">Stones</button>
             <ul class="dropdown-container">
-              <li><a href="../pages/shiny_stone.html">Shiny Stone</a></li>
-              <li><a href="../pages/black_stone.html">Black Stone</a></li>
-              <li><a href="../pages/mega_stone.html">Mega Stone</a></li>
-              <li><a href="../pages/cell_stone.html">Cell Stone</a></li>
+              <li><a href="${window.location.origin}/pages/shiny_stone.html">Shiny Stone</a></li>
+              <li><a href="${window.location.origin}/pages/black_stone.html">Black Stone</a></li>
+              <li><a href="${window.location.origin}/pages/mega_stone.html">Mega Stone</a></li>
+              <li><a href="${window.location.origin}/pages/cell_stone.html">Cell Stone</a></li>
             </ul>
           </li>
         </ul>
@@ -35,7 +35,6 @@ class Sidebar extends HTMLElement {
     const allLinks = shadow.querySelectorAll('a');
     const sidebar = shadow.getElementById("sidebar");
     const dropdownLinks = dropdownContainer.querySelectorAll('a');
-    const currentPath = window.location.pathname.split('/').pop(); 
 
     allLinks.forEach(link => {
       const href = link.getAttribute('href');
