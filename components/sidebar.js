@@ -1,4 +1,4 @@
-class MeuComponente extends HTMLElement {
+class Sidebar extends HTMLElement {
   constructor() {
     super();
 
@@ -32,6 +32,7 @@ class MeuComponente extends HTMLElement {
     const button = shadow.querySelector('.dropdown-btn');
     const dropdownContainer = shadow.querySelector('.dropdown-container');
     const allLinks = shadow.querySelectorAll('a');
+    const sidebar = shadow.getElementById("sidebar");
     const dropdownLinks = dropdownContainer.querySelectorAll('a');
     const currentPath = window.location.pathname.split('/').pop(); // ex: "cell_stone.html"
 
@@ -41,7 +42,7 @@ class MeuComponente extends HTMLElement {
 
       if (href.includes("pages") && (currentPath === hrefFile)) {
         link.classList.add('active');
-        
+
         if (Array.from(dropdownLinks).find(link => link.getAttribute('href') === href)) {
           dropdownContainer.classList.add('show');
           button.classList.add('rotate');
@@ -50,6 +51,11 @@ class MeuComponente extends HTMLElement {
     });
 
   
+    document.addEventListener("toggle-menu", () => {
+      sidebar.classList.toggle("open");
+      overlay.classList.toggle("active");
+      document.body.classList.toggle("menu-open");
+    });
 
     button.addEventListener('click', () => {
       shadow.querySelectorAll('.dropdown-container.show').forEach(openContainer => {
@@ -65,4 +71,4 @@ class MeuComponente extends HTMLElement {
   }
 }
 
-customElements.define('custom-sidebar', MeuComponente);
+customElements.define('custom-sidebar', Sidebar);
