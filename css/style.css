@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #1a1a1a;
+  background-color: transparent; 
 }
 
 /* ESTILO PARA O FUNDO DE PARTÍCULAS */
@@ -22,9 +22,10 @@ body {
   height: 100%;
   top: 0;
   left: 0;
+  background-color: #1a1a1a;
   background-image: url('https://i.imgur.com/TgcNnnF.png');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain; /* ALTERADO DE 'cover' PARA 'contain' */
   background-position: 50% 50%;
   z-index: -2;
 }
@@ -257,14 +258,14 @@ section {
 .tutorial-step-card,
 .feature-item-card {
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
-  border: 1px solid #555; /* Borda padrão um pouco mais visível */
+  border: 1px solid #555;
 }
 
 .item-card:hover,
 .pokemon-evolution-card:hover,
 .tutorial-step-card:hover,
 .feature-item-card:hover {
-  transform: translateY(-5px); /* Efeito de levitar */
+  transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
   border-color: #FFD700;
 }
