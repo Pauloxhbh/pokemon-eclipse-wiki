@@ -6,7 +6,8 @@ class Sidebar extends HTMLElement {
 
     shadow.innerHTML = `
       <link rel="stylesheet" href="../css/style.css" /> 
-      <nav id="sidebar">
+      <link rel="stylesheet" href="./css/style.css" /> 
+      <nav id="sidebar">  
         <ul>
           <li><strong>Navegação Rápida</strong></li>
           <li><a href="../index.html">Início</a></li>
