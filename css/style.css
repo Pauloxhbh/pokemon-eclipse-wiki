@@ -240,12 +240,22 @@ section {
 /* Estilo para imagem do item na Wiki */
 .wiki-item-image {
   width: 100%;
+
   img {
     float: right;
     width: 120px;
     margin-left: 120px;
     margin-bottom: 15px;
   }
+}
+
+.pokeballs-icon {
+  border: 3px solid #444;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 64px;
+  height: 64px;
+  margin-bottom: 0.5rem;
 }
 
 .wiki-item-image img {
@@ -330,6 +340,17 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 10px;
+
+  p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FFD700;
+  }
+
+  div {
+    place-content: center;
+    place-items: center;
+  }
 }
 
 @media (min-width: 1200px) {

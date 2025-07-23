@@ -13,6 +13,8 @@
 </head>
 <script>
     let pokemons = null
+    const pagesOrigin = window.location.origin == "https://pauloxhbh.github.io" ? window.location.origin + "/pokemon-eclipse-wiki" : window.location.origin
+
     Promise.all([
         LuaConverter.convertFromLua('catches'),
         LuaConverter.convertFromLua('pokeballs')
@@ -35,7 +37,8 @@
                             <div class="stone-cost"><span class="stone-quantity">Pontos de Catch: ${value.pontos}</span></div>
                             <p>Teto em Pokeballs:</p>
                             <div class="pokeballs-of-pokemon">
-                            ${pokeballsToPokemon.map(pokeball => `<p>${pokeball.pokeball}: ${pokeball.quantidade}</p>`).join('')
+                            ${pokeballsToPokemon.map(pokeball => `<div><img class="pokeballs-icon"
+                            src="${pagesOrigin}/assets/img/pokeballs/${pokeball.nome}.jpg" alt="Ícone de ${pokeball.nome}" title="Ícone de ${pokeball.nome}"><p>${pokeball.quantidade}</p></div>`).join('')
                     }
                             </div>
                         `
@@ -48,7 +51,7 @@
             let pokeballsToPokemon = []
             Object.entries(pokeballs).forEach(([key, pokeballValue]) => {
                 if (pokeballValue.tipos.includes('todos') || pokemon.tipos.some(tipo => pokeballValue.tipos.includes(tipo))) {
-                    pokeballsToPokemon.push({ pokeball: key.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '), quantidade: Math.ceil(pokemon.pontos / pokeballValue.pontos) })
+                    pokeballsToPokemon.push({ nome: key, quantidade: Math.ceil(pokemon.pontos / pokeballValue.pontos) })
                 }
             });
 
