@@ -251,7 +251,7 @@ section {
 
 .pokeballs-icon {
   border: 3px solid #444;
-  border-radius: 8px;
+  border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.3);
   width: 64px;
   height: 64px;
@@ -329,9 +329,13 @@ section {
   gap: 1.5rem;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .item-cards-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .evolution-cards-container{
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
