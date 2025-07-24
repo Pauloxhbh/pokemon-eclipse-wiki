@@ -240,15 +240,19 @@ section {
 /* Estilo para imagem do item na Wiki */
 .wiki-item-image {
   width: 100%;
-
-  img {
-    float: right;
-    width: 120px;
-    margin-left: 120px;
-    margin-bottom: 15px;
-  }
 }
 
+.wiki-item-image img {
+  float: right;
+  width: 120px;
+  margin-left: 120px; /* Mantido como o amigo deixou */
+  margin-bottom: 15px;
+  border: 3px solid #444;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Novas classes do amigo */
 .pokeballs-icon {
   border: 3px solid #444;
   border-radius: 50%;
@@ -256,12 +260,6 @@ section {
   width: 64px;
   height: 64px;
   margin-bottom: 0.5rem;
-}
-
-.wiki-item-image img {
-  border: 3px solid #444;
-  border-radius: 8px;
-  background-color: rgba(0, 0, 0, 0.3);
 }
 
 /* Animações Interativas nos Cards */
@@ -329,33 +327,33 @@ section {
   gap: 1.5rem;
 }
 
+/* Media Query do amigo */
 @media (max-width: 768px) {
   .item-cards-container {
     grid-template-columns: repeat(2, 1fr);
   }
-
   .evolution-cards-container{
     grid-template-columns: repeat(1, 1fr);
   }
 }
 
+/* Nova classe do amigo (sintaxe corrigida) */
 .pokeballs-of-pokemon {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 10px;
-
-  p {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #FFD700;
-  }
-
-  div {
-    place-content: center;
-    place-items: center;
-  }
 }
+.pokeballs-of-pokemon p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #FFD700;
+}
+.pokeballs-of-pokemon div {
+  place-content: center;
+  place-items: center;
+}
+
 
 @media (min-width: 1200px) {
   .item-cards-container {
@@ -391,6 +389,17 @@ section {
   margin-bottom: 1rem;
   font-size: 0.9rem;
   flex-grow: 1;
+}
+
+/* Classe restaurada para a página de pokebolas */
+.item-value {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  font-weight: bold;
+  color: #FFD700;
+  border-top: 1px solid #555;
+  width: 100%;
+  font-size: 1.1rem;
 }
 
 .item-obtainment-info {
@@ -447,7 +456,6 @@ section {
 
 .feature-item-description h3 {
   color: #ffffff;
-  /* ATUALIZADO: Título do card de branco para melhor contraste */
   margin-bottom: 0.5rem;
 }
 
@@ -504,7 +512,6 @@ hr.section-divider {
   from {
     transform: translateY(100%);
   }
-
   to {
     transform: translateY(-100%);
   }
@@ -526,11 +533,8 @@ hr.section-divider {
 .wiki-button {
   display: inline-block;
   background-color: rgba(0, 0, 0, 0.3);
-  /* ATUALIZADO: Fundo escuro */
   color: #FFD700;
-  /* ATUALIZADO: Texto amarelo */
   border: 1px solid #FFD700;
-  /* ATUALIZADO: Borda amarela */
   padding: 8px 15px;
   border-radius: 5px;
   text-decoration: none;
@@ -541,6 +545,5 @@ hr.section-divider {
 
 .wiki-button:hover {
   background-color: #FFD700;
-  /* ATUALIZADO: Inverte as cores no hover */
   color: #1a1a1a;
-}
+  }
