@@ -6,7 +6,7 @@ body, h1, h2, h3, h4, ul, li, p {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   line-height: 1.6;
   position: relative;
   display: flex;
@@ -72,14 +72,17 @@ body::before {
   position: fixed;
   left: -240px;
   top: 0;
-  width: 240px;
+  width: 250px;
   height: 100%;
   background-color: #222;
   color: white;
   transition: left 0.3s ease;
   z-index: 1001;
-  padding: 1rem;
   overflow-y: auto;
+
+  h3 {
+    text-align: center; 
+  }
 }
 
 #sidebar.open {
@@ -88,21 +91,42 @@ body::before {
 
 #sidebar ul {
   list-style: none;
-  margin-top: 1rem;
+  margin: 1rem 0;
+  width: 250px;
+}
+
+#sidebar ul ul {
+  margin-top: 0px;
+  padding: 0px 1rem;
+
+  button {
+    height: 35px;
+  text-align: center;
+  }
+  
 }
 
 #sidebar ul li {
-  margin: 0.8rem 0;
+  padding: 0px 1rem;
+
+
+  &:hover {
+    background-color: #333;
+  }
 }
 
 #sidebar a {
   color: white;
+  height: 35px;
+  align-items: center;
+  width: 100% !important;
+  display: flex;
   text-decoration: none;
 }
 
-#sidebar a.active {
+#sidebar li.active {
   font-weight: bold;
-  text-decoration: underline;
+  background-color: #333;
 }
 
 /* Dropdown */
@@ -123,7 +147,14 @@ body::before {
   display: none;
   list-style: none;
   padding-left: 1rem;
+
+  li {
+    width: 217px;
+  }
+
 }
+
+
 
 /* Overlay do Menu */
 #overlay {
@@ -245,7 +276,8 @@ section {
 .wiki-item-image img {
   float: right;
   width: 120px;
-  margin-left: 120px; /* Mantido como o amigo deixou */
+  margin-left: 120px;
+  /* Mantido como o amigo deixou */
   margin-bottom: 15px;
   border: 3px solid #444;
   border-radius: 8px;
@@ -372,6 +404,7 @@ section {
   .item-cards-container {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .farm-info-card {
     max-width: 230px;
 
@@ -395,11 +428,13 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 10px;
 }
+
 .pokeballs-of-pokemon p {
   font-size: 1.2rem;
   font-weight: bold;
   color: #FFD700;
 }
+
 .pokeballs-of-pokemon div {
   place-content: center;
   place-items: center;
@@ -563,6 +598,7 @@ hr.section-divider {
   from {
     transform: translateY(100%);
   }
+
   to {
     transform: translateY(-100%);
   }
@@ -597,4 +633,4 @@ hr.section-divider {
 .wiki-button:hover {
   background-color: #FFD700;
   color: #1a1a1a;
-  }
+}

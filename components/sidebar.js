@@ -10,7 +10,7 @@ class Sidebar extends HTMLElement {
       <link rel="stylesheet" href="${pagesOrigin}/css/style.css" /> 
       <nav id="sidebar">  
         <ul style="position: fixed; top: 60px;">
-          <li><strong>Navegação Rápida</strong></li>
+          <h3><strong>Navegação Rápida</strong></h3>
           <li><a href="${pagesOrigin}/index.html">Início</a></li>
           <li><a href="${pagesOrigin}/pages/tutorial.html">Tutorial</a></li>
           <li><a href="${pagesOrigin}/pages/quests.html">Quests</a></li>
@@ -19,7 +19,7 @@ class Sidebar extends HTMLElement {
           <li><a href="${pagesOrigin}/pages/farm.html">Hunts de Farm</a></li>
           <li><a href="${pagesOrigin}/pages/tower.html">Tower</a></li>
           <li><a href="${pagesOrigin}/pages/tier.html">Tiers dos Pokémons</a></li>
-          <li>
+          <ul>
             <button class="dropdown-btn">Stones</button>
             <ul class="dropdown-container">
               <li><a href="${pagesOrigin}/pages/shiny_stone.html">Shiny Stone</a></li>
@@ -27,7 +27,7 @@ class Sidebar extends HTMLElement {
               <li><a href="${pagesOrigin}/pages/mega_stone.html">Mega Stone</a></li>
               <li><a href="${pagesOrigin}/pages/cell_stone.html">Cell Stone</a></li>
             </ul>
-          </li>
+          </ul>
         </ul>
       </nav>
     `;
@@ -43,7 +43,7 @@ class Sidebar extends HTMLElement {
       const hrefFile = href.split('/').pop(); 
 
       if (href.includes("pages") && (currentPath === hrefFile)) {
-        link.classList.add('active');
+        link.parentElement.classList.add('active');
 
         if (Array.from(dropdownLinks).find(link => link.getAttribute('href') === href)) {
           dropdownContainer.classList.add('show');
