@@ -201,7 +201,7 @@ section {
     min-height: 100%;
   }
 
-  .evolution-cards-container, .item-cards-container {
+  .evolution-cards-container, .farm-cards-container, .item-cards-container {
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -267,6 +267,7 @@ section {
 /* Animações Interativas nos Cards */
 .item-card,
 .pokemon-evolution-card,
+.farm-info-card,
 .tutorial-step-card,
 .feature-item-card {
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
@@ -275,6 +276,7 @@ section {
 
 .item-card:hover,
 .pokemon-evolution-card:hover,
+.farm-info-card:hover,
 .tutorial-step-card:hover,
 .feature-item-card:hover {
   transform: translateY(-5px);
@@ -284,6 +286,20 @@ section {
 
 /* Estilos para os Cards de Evolução */
 .evolution-cards-container {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.catch-cards-container {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.farm-cards-container {
   margin-top: 1.5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -300,6 +316,30 @@ section {
   padding: 1rem;
   text-align: center;
   min-height: 150px;
+}
+
+.farm-info-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  min-height: 150px;
+
+  p, div {
+    margin-top: 15px;
+  }
+
+  img {
+    border: 3px solid #444;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: auto;
+    height: 450px;
+  }
 }
 
 .pokemon-icon {
@@ -334,9 +374,20 @@ section {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .evolution-cards-container{
+  .farm-info-card {
+    max-width: 230px;
+
+    img {
+      width: auto;
+      height: 100px;
+    }
+  }
+
+
+  .evolution-cards-container, .farm-cards-container, .catch-cards-container {
     grid-template-columns: repeat(1, 1fr);
   }
+
 }
 
 .pokeballs-of-pokemon {

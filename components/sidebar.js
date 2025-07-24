@@ -9,13 +9,14 @@ class Sidebar extends HTMLElement {
     shadow.innerHTML = `
       <link rel="stylesheet" href="${pagesOrigin}/css/style.css" /> 
       <nav id="sidebar">  
-        <ul>
+        <ul style="position: fixed; top: 60px;">
           <li><strong>Navegação Rápida</strong></li>
           <li><a href="${pagesOrigin}/index.html">Início</a></li>
           <li><a href="${pagesOrigin}/pages/tutorial.html">Tutorial</a></li>
           <li><a href="${pagesOrigin}/pages/quests.html">Quests</a></li>
           <li><a href="${pagesOrigin}/pages/items.html">Itens e Equipamentos</a></li>
           <li><a href="${pagesOrigin}/pages/catches.html">Pokémons de Catch</a></li>
+          <li><a href="${pagesOrigin}/pages/farm.html">Hunts de Farm</a></li>
           <li><a href="${pagesOrigin}/pages/tower.html">Tower</a></li>
           <li><a href="${pagesOrigin}/pages/tier.html">Tiers dos Pokémons</a></li>
           <li>
