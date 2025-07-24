@@ -10,6 +10,7 @@
     <script src="../components/footer.js"></script>
     <script src="../utils/luaConverter.js"></script>
     <link rel="stylesheet" href="../css/style.css" />
+    <script src="./components/header.js"></script>
     <script>
         let pokemons = null
         const pagesOrigin = window.location.origin == "https://pauloxhbh.github.io" ? window.location.origin + "/pokemon-eclipse-wiki" : window.location.origin
@@ -63,10 +64,7 @@
 </head>
 
 <body>
-    <header id="main-header">
-        <button id="menu-toggle" aria-label="Abrir menu de navegação">&#9776;</button>
-        <h1>Pokemon Eclipse Wiki</h1>
-    </header>
+    <custom-header></custom-header>
 
     <div id="overlay"></div>
 
@@ -104,7 +102,7 @@
 
     <custom-footer></custom-footer>
 
-    <!-- <script src="../script/script.js"></script> -->
+    <script src="../script/script.js"></script>
 </body>
 
 </html>
