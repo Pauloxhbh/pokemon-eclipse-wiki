@@ -52,7 +52,7 @@ body::before {
   align-items: center;
   justify-content: space-between;
   position: relative; 
-  z-index: 999; /* CORRIGIDO: de 1002 para 999, para ficar atrás do overlay e da sidebar */
+  z-index: 999;
 }
 
 #main-header h1 {
@@ -245,7 +245,7 @@ section {
 .item-cards-container {
   margin-top: 1.5rem;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr; /* 1 coluna em telas pequenas por padrão */
   gap: 1.5rem;
 }
 
@@ -468,7 +468,7 @@ hr.section-divider {
   color: #1a1a1a;
 }
 
-/* Responsivo para Telas Maiores */
+/* Responsivo para Telas de Tablet */
 @media (min-width: 768px) {
   #content {
     margin: 2rem;
@@ -477,10 +477,7 @@ hr.section-divider {
   section {
     padding: 1.5rem;
   }
-  .item-cards-container,
-  .evolution-cards-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  /* Cards continuam com 1 coluna para tablets na vertical, para evitar aperto */
   .feature-item-description {
     text-align: left;
   }
@@ -493,6 +490,7 @@ hr.section-divider {
   }
 }
 
+/* Responsivo para Telas de Desktop */
 @media (min-width: 1024px) {
   #sidebar {
     position: relative;
@@ -503,7 +501,7 @@ hr.section-divider {
   }
 
   .evolution-cards-container, .item-cards-container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* Apenas no desktop os cards ficam lado a lado */
   }
 
   #overlay {
