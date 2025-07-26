@@ -19,10 +19,9 @@ class Header extends HTMLElement {
 
     if (menuToggle) {
       menuToggle.addEventListener("click", () => {
-        // Dispara o evento que a sidebar vai "ouvir"
-        this.dispatchEvent(new CustomEvent("toggle-menu", {
-          bubbles: true, // Permite que o evento "suba" na árvore de elementos
-          composed: true // Permite que o evento cruze a barreira do Shadow DOM
+        document.dispatchEvent(new CustomEvent("toggle-menu", {
+          bubbles: true,
+          composed: true
         }));
       });
     }
