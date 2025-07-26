@@ -27,7 +27,6 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 50% 50%;
-  background-attachment: fixed;
   z-index: -2;
 }
 
@@ -52,7 +51,7 @@ body::before {
   align-items: center;
   justify-content: space-between;
   position: relative; 
-  z-index: 999;
+  z-index: 1002;
 }
 
 #main-header h1 {
@@ -154,8 +153,8 @@ body.menu-open {
 
 /* Conteúdo principal com fundo translúcido */
 #content {
-  margin: 1rem;
-  padding: 0.5rem;
+  margin: 2rem;
+  padding: 1rem;
   flex-grow: 1;
 }
 
@@ -163,7 +162,7 @@ section {
   background: rgba(20, 20, 20, 0.5);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -190,6 +189,37 @@ section {
     color: #FFD700;
     text-align: center;
     padding: 1rem;
+}
+
+/* Responsivo */
+@media (min-width: 1024px) {
+  #sidebar {
+    position: relative;
+    left: 0;
+    width: 250px;
+    height: auto;
+    min-height: 100%;
+  }
+
+  .evolution-cards-container, .item-cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #overlay {
+    display: none !important;
+  }
+
+  #menu-toggle {
+    display: none; 
+  }
+
+  body.menu-open {
+    overflow: auto;
+  }
+
+  #main-header {
+    justify-content: center;
+  }
 }
 
 /* Regras para funcionalidade do Dropdown */
@@ -240,13 +270,18 @@ section {
   border-color: #FFD700;
 }
 
-/* Estilos para os Cards (BASE MOBILE) */
-.evolution-cards-container,
-.item-cards-container {
+/* Estilos para os Cards de Evolução */
+.evolution-cards-container {
   margin-top: 1.5rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .evolution-cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .pokemon-evolution-card {
@@ -278,6 +313,26 @@ section {
   font-size: 1.2rem;
   font-weight: bold;
   color: #FFD700;
+}
+
+/* Estilos para os Cards de Itens */
+.item-cards-container {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .item-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .item-cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .item-card {
@@ -359,8 +414,8 @@ section {
 }
 
 .feature-item-image {
-  width: 100px;
-  margin: 0 auto;
+  flex-shrink: 0;
+  width: 120px;
 }
 
 .feature-item-image img {
@@ -370,12 +425,10 @@ section {
 
 .feature-item-description {
   flex-grow: 1;
-  text-align: center;
 }
 
 .feature-item-description h3 {
   color: #ffffff;
-  margin-bottom: 0.5rem;
 }
 
 .feature-item-description ul {
@@ -446,7 +499,6 @@ hr.section-divider {
   margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 0.5rem;
 }
 
@@ -466,56 +518,4 @@ hr.section-divider {
 .wiki-button:hover {
   background-color: #FFD700;
   color: #1a1a1a;
-}
-
-/* Responsivo para Telas de Tablet */
-@media (min-width: 768px) {
-  #content {
-    margin: 2rem;
-    padding: 1rem;
-  }
-  section {
-    padding: 1.5rem;
-  }
-  .feature-item-description {
-    text-align: left;
-  }
-  .feature-item-image {
-    width: 120px;
-    margin: 0;
-  }
-  .card-links {
-    justify-content: flex-start;
-  }
-}
-
-/* Responsivo para Telas de Desktop */
-@media (min-width: 1024px) {
-  #sidebar {
-    position: relative;
-    left: 0;
-    width: 250px;
-    height: auto;
-    min-height: 100%;
-  }
-
-  .evolution-cards-container, .item-cards-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  #overlay {
-    display: none !important;
-  }
-
-  #menu-toggle {
-    display: none; 
-  }
-
-  body.menu-open {
-    overflow: auto;
-  }
-
-  #main-header {
-    justify-content: center;
-  }
   }
