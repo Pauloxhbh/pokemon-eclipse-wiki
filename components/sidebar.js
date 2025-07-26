@@ -1,74 +1,91 @@
 class Sidebar extends HTMLElement {
   constructor() {
     super();
+    this.attachShadow({ mode: 'open' });
+  }
 
-    const shadow = this.attachShadow({ mode: 'open' });
-    const currentPath = window.location.pathname.split('/').pop(); 
-    const pagesOrigin = window.location.origin == "https://pauloxhbh.github.io" ? window.location.origin + "/pokemon-eclipse-wiki" : window.location.origin
+  connectedCallback() {
+    const path = window.location.pathname;
+    const isIndex = path.endsWith('/') || path.endsWith('index.html');
+    
+    const rootPrefix = isIndex ? '' : '../';
+    const pagesPrefix = isIndex ? 'pages/' : '';
 
-    shadow.innerHTML = `
-      <link rel="stylesheet" href="${pagesOrigin}/css/style.css" /> 
+    this.shadowRoot.innerHTML = `
+      <link rel="stylesheet" href="${rootPrefix}css/style.css" /> 
       <nav id="sidebar">  
-        <ul style="position: fixed; top: 60px;">
-          <h3><strong>Navegação Rápida</strong></h3>
-          <li><a href="${pagesOrigin}/index.html">Início</a></li>
-          <li><a href="${pagesOrigin}/pages/tutorial.html">Tutorial</a></li>
-          <li><a href="${pagesOrigin}/pages/quests.html">Quests</a></li>
-          <li><a href="${pagesOrigin}/pages/items.html">Itens e Equipamentos</a></li>
-          <li><a href="${pagesOrigin}/pages/catches.html">Pokémons de Catch</a></li>
-          <li><a href="${pagesOrigin}/pages/farm.html">Hunts de Farm</a></li>
-          <li><a href="${pagesOrigin}/pages/tower.html">Tower</a></li>
-          <li><a href="${pagesOrigin}/pages/tier.html">Tiers dos Pokémons</a></li>
-          <ul>
+        <ul>
+          <li><strong>Navegação Rápida</strong></li>
+          <li><a href="${rootPrefix}index.html">Início</a></li>
+          <li><a href="${pagesPrefix}quests.html">Quests</a></li>
+          <li><a href="${pagesPrefix}items.html">Itens e Equipamentos</a></li>
+          <li><a href="${pagesPrefix}catch.html">Pokémons de Catch</a></li>
+          <li><a href="${pagesPrefix}tower.html">Tower</a></li>
+          <li><a href="${pagesPrefix}tier.html">Tiers dos Pokémons</a></li>
+          <li>
             <button class="dropdown-btn">Stones</button>
             <ul class="dropdown-container">
-              <li><a href="${pagesOrigin}/pages/shiny_stone.html">Shiny Stone</a></li>
-              <li><a href="${pagesOrigin}/pages/black_stone.html">Black Stone</a></li>
-              <li><a href="${pagesOrigin}/pages/mega_stone.html">Mega Stone</a></li>
-              <li><a href="${pagesOrigin}/pages/cell_stone.html">Cell Stone</a></li>
+              <li><a href="${pagesPrefix}shiny_stone.html">Shiny Stone</a></li>
+              <li><a href="${pagesPrefix}black_stone.html">Black Stone</a></li>
+              <li><a href="${pagesPrefix}mega_stone.html">Mega Stone</a></li>
+              <li><a href="${pagesPrefix}cell_stone.html">Cell Stone</a></li>
             </ul>
-          </ul>
+          </li>
         </ul>
       </nav>
     `;
 
-    const button = shadow.querySelector('.dropdown-btn');
-    const dropdownContainer = shadow.querySelector('.dropdown-container');
-    const allLinks = shadow.querySelectorAll('a');
-    const sidebar = shadow.getElementById("sidebar");
-    const dropdownLinks = dropdownContainer.querySelectorAll('a');
+    const sidebar = this.shadowRoot.querySelector('#sidebar');
+    const overlay = document.getElementById('overlay'); // O overlay é o único elemento que o componente ainda controla no DOM principal
+    const dropdownBtn = this.shadowRoot.querySelector('.dropdown-btn');
+    const dropdownContainer = this.shadowRoot.querySelector('.dropdown-container');
 
-    allLinks.forEach(link => {
-      const href = link.getAttribute('href');
-      const hrefFile = href.split('/').pop(); 
-
-      if (href.includes("pages") && (currentPath === hrefFile)) {
-        link.parentElement.classList.add('active');
-
-        if (Array.from(dropdownLinks).find(link => link.getAttribute('href') === href)) {
-          dropdownContainer.classList.add('show');
-          button.classList.add('rotate');
-        }
-      }
-    });
-
-  
+    // Ouve o evento "toggle-menu" que o header dispara
     document.addEventListener("toggle-menu", () => {
       sidebar.classList.toggle("open");
-      overlay.classList.toggle("active");
+      if (overlay) overlay.classList.toggle("active");
       document.body.classList.toggle("menu-open");
     });
 
-    button.addEventListener('click', () => {
-      shadow.querySelectorAll('.dropdown-container.show').forEach(openContainer => {
-        if (openContainer !== dropdownContainer) {
-          openContainer.classList.remove('show');
-          openContainer.previousElementSibling.classList.remove('rotate');
-        }
+    // Fecha o menu se o overlay for clicado
+    if (overlay) {
+      overlay.addEventListener('click', () => {
+        sidebar.classList.remove("open");
+        overlay.classList.remove("active");
+        document.body.classList.remove("menu-open");
       });
+    }
 
+    // Lógica interna para o dropdown
+    dropdownBtn.addEventListener('click', () => {
       dropdownContainer.classList.toggle('show');
-      button.classList.toggle('rotate');
+      dropdownBtn.classList.toggle('rotate');
+    });
+
+    this.updateActiveLink();
+  }
+
+  updateActiveLink() {
+    const links = this.shadowRoot.querySelectorAll('a');
+    const currentPath = window.location.pathname;
+
+    links.forEach(link => {
+      const linkPath = new URL(link.href).pathname;
+      
+      if (link.href.includes('items.html') && /stone|boost|moedas|pokebolas|orb|genecraft/.test(currentPath)) {
+          link.classList.add('active');
+      }
+      
+      if (currentPath === linkPath) {
+        link.classList.add('active');
+
+        // Se o link ativo estiver dentro de um dropdown, abre o dropdown
+        if (link.closest('.dropdown-container')) {
+          const container = link.closest('.dropdown-container');
+          container.classList.add('show');
+          container.previousElementSibling.classList.add('rotate');
+        }
+      }
     });
   }
 }
