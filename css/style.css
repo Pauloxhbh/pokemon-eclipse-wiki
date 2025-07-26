@@ -238,6 +238,12 @@ section {
 }
 
 /* Estilo para imagem do item na Wiki */
+.wiki-item-image img {
+  border: 3px solid #444;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .wiki-item-image {
   float: right;
   width: 120px;
@@ -245,18 +251,12 @@ section {
   margin-bottom: 15px;
 }
 
-.wiki-item-image img {
-  width: 100%;
-  border: 3px solid #444;
-  border-radius: 8px;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
 /* Animações Interativas nos Cards */
 .item-card,
 .pokemon-evolution-card,
 .tutorial-step-card,
-.feature-item-card {
+.feature-item-card,
+.farm-info-card { /* Adicionada a nova classe aqui */
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
   border: 1px solid #555;
 }
@@ -264,7 +264,8 @@ section {
 .item-card:hover,
 .pokemon-evolution-card:hover,
 .tutorial-step-card:hover,
-.feature-item-card:hover {
+.feature-item-card:hover,
+.farm-info-card:hover { /* Adicionada a nova classe aqui */
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
   border-color: #FFD700;
@@ -429,6 +430,7 @@ section {
 
 .feature-item-description h3 {
   color: #ffffff;
+  margin-bottom: 0.5rem;
 }
 
 .feature-item-description ul {
@@ -518,4 +520,53 @@ hr.section-divider {
 .wiki-button:hover {
   background-color: #FFD700;
   color: #1a1a1a;
+}
+
+/* NOVOS ESTILOS PARA A PÁGINA DE FARM */
+.farm-cards-container {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.farm-info-card {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.farm-info-card img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 5px;
+  margin: 0 auto 1rem auto;
+}
+
+.farm-info-card .stone-cost {
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .farm-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .farm-info-card {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .farm-info-card img {
+    flex-basis: 150px;
+    flex-shrink: 0;
+    width: 150px;
+    margin: 0;
+  }
   }
