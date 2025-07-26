@@ -7,12 +7,13 @@ class Sidebar extends HTMLElement {
   connectedCallback() {
     const path = window.location.pathname;
     const isIndex = path.endsWith('/') || path.endsWith('index.html');
-    
     const rootPrefix = isIndex ? '' : '../';
     const pagesPrefix = isIndex ? 'pages/' : '';
+    const pagesOrigin = window.location.origin === "https://pauloxhbh.github.io" ? window.location.origin + "/pokemon-eclipse-wiki" : window.location.origin;
+
 
     this.shadowRoot.innerHTML = `
-      <link rel="stylesheet" href="${rootPrefix}css/style.css" /> 
+      <link rel="stylesheet" href="${pagesOrigin}/css/style.css" />
       <nav id="sidebar">  
         <ul>
           <li><strong>Navegação Rápida</strong></li>
@@ -36,18 +37,16 @@ class Sidebar extends HTMLElement {
     `;
 
     const sidebar = this.shadowRoot.querySelector('#sidebar');
-    const overlay = document.getElementById('overlay'); // O overlay é o único elemento que o componente ainda controla no DOM principal
+    const overlay = document.getElementById('overlay');
     const dropdownBtn = this.shadowRoot.querySelector('.dropdown-btn');
     const dropdownContainer = this.shadowRoot.querySelector('.dropdown-container');
 
-    // Ouve o evento "toggle-menu" que o header dispara
     document.addEventListener("toggle-menu", () => {
       sidebar.classList.toggle("open");
       if (overlay) overlay.classList.toggle("active");
       document.body.classList.toggle("menu-open");
     });
 
-    // Fecha o menu se o overlay for clicado
     if (overlay) {
       overlay.addEventListener('click', () => {
         sidebar.classList.remove("open");
@@ -56,7 +55,6 @@ class Sidebar extends HTMLElement {
       });
     }
 
-    // Lógica interna para o dropdown
     dropdownBtn.addEventListener('click', () => {
       dropdownContainer.classList.toggle('show');
       dropdownBtn.classList.toggle('rotate');
@@ -72,14 +70,12 @@ class Sidebar extends HTMLElement {
     links.forEach(link => {
       const linkPath = new URL(link.href).pathname;
       
-      if (link.href.includes('items.html') && /stone|boost|moedas|pokebolas|orb|genecraft/.test(currentPath)) {
+      if (link.href.endsWith('items.html') && /stone|boost|moedas|pokebolas|orb|genecraft/.test(currentPath)) {
           link.classList.add('active');
       }
       
       if (currentPath === linkPath) {
         link.classList.add('active');
-
-        // Se o link ativo estiver dentro de um dropdown, abre o dropdown
         if (link.closest('.dropdown-container')) {
           const container = link.closest('.dropdown-container');
           container.classList.add('show');
