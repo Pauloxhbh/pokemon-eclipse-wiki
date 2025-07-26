@@ -240,12 +240,12 @@ section {
   border-color: #FFD700;
 }
 
-/* Estilos para os Cards de Evolução e Itens (BASE MOBILE) */
+/* Estilos para os Cards (BASE MOBILE) */
 .evolution-cards-container,
 .item-cards-container {
   margin-top: 1.5rem;
   display: grid;
-  grid-template-columns: 1fr; /* 1 coluna em telas pequenas por padrão */
+  grid-template-columns: 1fr;
   gap: 1.5rem;
 }
 
@@ -477,7 +477,6 @@ hr.section-divider {
   section {
     padding: 1.5rem;
   }
-  /* Cards continuam com 1 coluna para tablets na vertical, para evitar aperto */
   .feature-item-description {
     text-align: left;
   }
@@ -501,7 +500,7 @@ hr.section-divider {
   }
 
   .evolution-cards-container, .item-cards-container {
-    grid-template-columns: repeat(3, 1fr); /* Apenas no desktop os cards ficam lado a lado */
+    grid-template-columns: repeat(3, 1fr);
   }
 
   #overlay {
