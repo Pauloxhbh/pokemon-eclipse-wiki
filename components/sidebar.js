@@ -11,7 +11,6 @@ class Sidebar extends HTMLElement {
     const pagesPrefix = isIndex ? 'pages/' : '';
     const pagesOrigin = window.location.origin === "https://pauloxhbh.github.io" ? window.location.origin + "/pokemon-eclipse-wiki" : window.location.origin;
 
-
     this.shadowRoot.innerHTML = `
       <link rel="stylesheet" href="${pagesOrigin}/css/style.css" />
       <nav id="sidebar">  
@@ -70,7 +69,7 @@ class Sidebar extends HTMLElement {
     links.forEach(link => {
       const linkPath = new URL(link.href).pathname;
       
-      if (link.href.endsWith('items.html') && /stone|boost|moedas|pokebolas|orb|genecraft/.test(currentPath)) {
+      if (link.href.endsWith('items.html') && /stone|boost|moedas|pokebolas|orb|genecraft|crystal|cards|maestria|starfusion/.test(currentPath)) {
           link.classList.add('active');
       }
       
