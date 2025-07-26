@@ -6,13 +6,13 @@ body, h1, h2, h3, h4, ul, li, p {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   line-height: 1.6;
   position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: transparent; 
+  background-color: transparent;
 }
 
 /* ESTILO PARA O FUNDO DE PARTÍCULAS */
@@ -50,7 +50,7 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative; 
+  position: relative;
   z-index: 1002;
 }
 
@@ -72,14 +72,17 @@ body::before {
   position: fixed;
   left: -240px;
   top: 0;
-  width: 240px;
+  width: 250px;
   height: 100%;
   background-color: #222;
   color: white;
   transition: left 0.3s ease;
   z-index: 1001;
-  padding: 1rem;
   overflow-y: auto;
+
+  h3 {
+    text-align: center; 
+  }
 }
 
 #sidebar.open {
@@ -88,21 +91,42 @@ body::before {
 
 #sidebar ul {
   list-style: none;
-  margin-top: 1rem;
+  margin: 1rem 0;
+  width: 250px;
+}
+
+#sidebar ul ul {
+  margin-top: 0px;
+  padding: 0px 1rem;
+
+  button {
+    height: 35px;
+  text-align: center;
+  }
+  
 }
 
 #sidebar ul li {
-  margin: 0.8rem 0;
+  padding: 0px 1rem;
+
+
+  &:hover {
+    background-color: #333;
+  }
 }
 
 #sidebar a {
   color: white;
+  height: 35px;
+  align-items: center;
+  width: 100% !important;
+  display: flex;
   text-decoration: none;
 }
 
-#sidebar a.active {
+#sidebar li.active {
   font-weight: bold;
-  text-decoration: underline;
+  background-color: #333;
 }
 
 /* Dropdown */
@@ -123,7 +147,14 @@ body::before {
   display: none;
   list-style: none;
   padding-left: 1rem;
+
+  li {
+    width: 217px;
+  }
+
 }
+
+
 
 /* Overlay do Menu */
 #overlay {
@@ -147,8 +178,8 @@ body.menu-open {
 }
 
 .main-layout {
-    flex: 1;
-    display: flex;
+  flex: 1;
+  display: flex;
 }
 
 /* Conteúdo principal com fundo translúcido */
@@ -167,7 +198,7 @@ section {
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   color: white;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 /* Estilo para links no conteúdo principal */
@@ -185,10 +216,10 @@ section {
 
 /* Regras do Rodapé */
 #main-footer {
-    background-color: #1a1a1a;
-    color: #FFD700;
-    text-align: center;
-    padding: 1rem;
+  background-color: #1a1a1a;
+  color: #FFD700;
+  text-align: center;
+  padding: 1rem;
 }
 
 /* Responsivo */
@@ -201,7 +232,7 @@ section {
     min-height: 100%;
   }
 
-  .evolution-cards-container, .item-cards-container {
+  .evolution-cards-container, .farm-cards-container, .item-cards-container {
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -210,7 +241,7 @@ section {
   }
 
   #menu-toggle {
-    display: none; 
+    display: none;
   }
 
   body.menu-open {
@@ -238,34 +269,46 @@ section {
 }
 
 /* Estilo para imagem do item na Wiki */
+.wiki-item-image {
+  width: 100%;
+}
+
 .wiki-item-image img {
+  float: right;
+  width: 120px;
+  margin-left: 120px;
+  /* Mantido como o amigo deixou */
+  margin-bottom: 15px;
   border: 3px solid #444;
   border-radius: 8px;
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.wiki-item-image {
-  float: right;
-  width: 120px;
-  margin-left: 20px;
-  margin-bottom: 15px;
+/* Novas classes do amigo */
+.pokeballs-icon {
+  border: 3px solid #444;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 64px;
+  height: 64px;
+  margin-bottom: 0.5rem;
 }
 
 /* Animações Interativas nos Cards */
 .item-card,
 .pokemon-evolution-card,
+.farm-info-card,
 .tutorial-step-card,
-.feature-item-card,
-.farm-info-card { /* Adicionada a nova classe aqui */
+.feature-item-card {
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
   border: 1px solid #555;
 }
 
 .item-card:hover,
 .pokemon-evolution-card:hover,
+.farm-info-card:hover,
 .tutorial-step-card:hover,
-.feature-item-card:hover,
-.farm-info-card:hover { /* Adicionada a nova classe aqui */
+.feature-item-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
   border-color: #FFD700;
@@ -275,14 +318,22 @@ section {
 .evolution-cards-container {
   margin-top: 1.5rem;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
-@media (min-width: 768px) {
-    .evolution-cards-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.catch-cards-container {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.farm-cards-container {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
 }
 
 .pokemon-evolution-card {
@@ -295,6 +346,30 @@ section {
   padding: 1rem;
   text-align: center;
   min-height: 150px;
+}
+
+.farm-info-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  min-height: 150px;
+
+  p, div {
+    margin-top: 15px;
+  }
+
+  img {
+    border: 3px solid #444;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: auto;
+    height: 450px;
+  }
 }
 
 .pokemon-icon {
@@ -324,11 +399,47 @@ section {
   gap: 1.5rem;
 }
 
-@media (min-width: 768px) {
+/* Media Query do amigo */
+@media (max-width: 768px) {
   .item-cards-container {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .farm-info-card {
+    max-width: 230px;
+
+    img {
+      width: auto;
+      height: 100px;
+    }
+  }
+
+
+  .evolution-cards-container, .farm-cards-container, .catch-cards-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
 }
+
+/* Nova classe do amigo (sintaxe corrigida) */
+.pokeballs-of-pokemon {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.pokeballs-of-pokemon p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #FFD700;
+}
+
+.pokeballs-of-pokemon div {
+  place-content: center;
+  place-items: center;
+}
+
 
 @media (min-width: 1200px) {
   .item-cards-container {
@@ -366,6 +477,7 @@ section {
   flex-grow: 1;
 }
 
+/* Classe restaurada para a página de pokebolas */
 .item-value {
   margin-top: auto;
   padding-top: 0.75rem;
@@ -486,6 +598,7 @@ hr.section-divider {
   from {
     transform: translateY(100%);
   }
+
   to {
     transform: translateY(-100%);
   }
@@ -521,52 +634,3 @@ hr.section-divider {
   background-color: #FFD700;
   color: #1a1a1a;
 }
-
-/* NOVOS ESTILOS PARA A PÁGINA DE FARM */
-.farm-cards-container {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-.farm-info-card {
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 8px;
-  padding: 1rem;
-  text-align: center;
-}
-
-.farm-info-card img {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-  border-radius: 5px;
-  margin: 0 auto 1rem auto;
-}
-
-.farm-info-card .stone-cost {
-  margin-bottom: 0.5rem;
-}
-
-@media (min-width: 768px) {
-  .farm-cards-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .farm-info-card {
-    flex-direction: row;
-    text-align: left;
-    align-items: center;
-    gap: 1.5rem;
-  }
-  
-  .farm-info-card img {
-    flex-basis: 150px;
-    flex-shrink: 0;
-    width: 150px;
-    margin: 0;
-  }
-  }
