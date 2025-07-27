@@ -12,7 +12,6 @@ class Sidebar extends HTMLElement {
         <ul style="position: fixed; top: 60px;">
           <h3><strong>Navegação Rápida</strong></h3>
           <li><a href="${pagesOrigin}/index.html">Início</a></li>
-          <li><a href="${pagesOrigin}/pages/tutorial.html">Tutorial</a></li>
           <li><a href="${pagesOrigin}/pages/quests.html">Quests</a></li>
           <li><a href="${pagesOrigin}/pages/items.html">Itens e Equipamentos</a></li>
           <li><a href="${pagesOrigin}/pages/catches.html">Pokémons de Catch</a></li>
