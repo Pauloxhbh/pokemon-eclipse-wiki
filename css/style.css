@@ -67,7 +67,7 @@ body::before {
   position: relative;
 }
 
-/* Sidebar */
+/* Sidebar (com sintaxe aninhada corrigida) */
 #sidebar {
   position: fixed;
   left: -240px;
@@ -79,10 +79,9 @@ body::before {
   transition: left 0.3s ease;
   z-index: 1001;
   overflow-y: auto;
-
-  h3 {
-    text-align: center; 
-  }
+}
+#sidebar h3 {
+  text-align: center; 
 }
 
 #sidebar.open {
@@ -92,27 +91,24 @@ body::before {
 #sidebar ul {
   list-style: none;
   margin: 1rem 0;
+  padding: 0;
   width: 250px;
 }
 
 #sidebar ul ul {
   margin-top: 0px;
   padding: 0px 1rem;
-
-  button {
-    height: 35px;
+}
+#sidebar ul ul button {
+  height: 35px;
   text-align: center;
-  }
-  
 }
 
 #sidebar ul li {
   padding: 0px 1rem;
-
-
-  &:hover {
-    background-color: #333;
-  }
+}
+#sidebar ul li:hover {
+  background-color: #333;
 }
 
 #sidebar a {
@@ -147,14 +143,10 @@ body::before {
   display: none;
   list-style: none;
   padding-left: 1rem;
-
-  li {
-    width: 217px;
-  }
-
 }
-
-
+.dropdown-container li {
+  width: 217px;
+}
 
 /* Overlay do Menu */
 #overlay {
@@ -272,12 +264,10 @@ section {
 .wiki-item-image {
   width: 100%;
 }
-
 .wiki-item-image img {
   float: right;
   width: 120px;
   margin-left: 120px;
-  /* Mantido como o amigo deixou */
   margin-bottom: 15px;
   border: 3px solid #444;
   border-radius: 8px;
@@ -358,18 +348,16 @@ section {
   padding: 1rem;
   text-align: center;
   min-height: 150px;
-
-  p, div {
-    margin-top: 15px;
-  }
-
-  img {
-    border: 3px solid #444;
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.3);
-    width: auto;
-    height: 450px;
-  }
+}
+.farm-info-card p, .farm-info-card div {
+  margin-top: 15px;
+}
+.farm-info-card img {
+  border: 3px solid #444;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: auto;
+  height: 100px;
 }
 
 .pokemon-icon {
@@ -407,18 +395,16 @@ section {
 
   .farm-info-card {
     max-width: 230px;
-
-    img {
-      width: auto;
-      height: 100px;
-    }
   }
 
+  .farm-info-card img {
+    width: auto;
+    height: 100px;
+  }
 
   .evolution-cards-container, .farm-cards-container, .catch-cards-container {
     grid-template-columns: repeat(1, 1fr);
   }
-
 }
 
 /* Nova classe do amigo (sintaxe corrigida) */
@@ -428,18 +414,15 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 10px;
 }
-
 .pokeballs-of-pokemon p {
   font-size: 1.2rem;
   font-weight: bold;
   color: #FFD700;
 }
-
 .pokeballs-of-pokemon div {
   place-content: center;
   place-items: center;
 }
-
 
 @media (min-width: 1200px) {
   .item-cards-container {
@@ -455,20 +438,19 @@ section {
   border-radius: 8px;
   padding: 1.5rem;
   text-align: center;
+  position: relative; /* ADICIONADO */
+  padding-top: 2.5rem; /* ADICIONADO */
 }
-
 .item-card img {
   width: 64px;
   height: 64px;
   margin-bottom: 1rem;
 }
-
 .item-card h3 {
   font-size: 1.2rem;
   color: #FFD700;
   margin-bottom: 0.75rem;
 }
-
 .item-card .item-description {
   font-style: italic;
   color: #ccc;
@@ -492,24 +474,20 @@ section {
   font-size: 0.9rem;
   width: 100%;
 }
-
 .item-obtainment-info h4 {
   font-size: 1rem;
   margin-bottom: 0.5rem;
   color: #fff;
 }
-
 .item-obtainment-info ul {
   list-style: none;
   padding: 0;
   text-align: left;
 }
-
 .item-obtainment-info ul li {
   margin-bottom: 0.5rem;
   line-height: 1.4;
 }
-
 .item-obtainment-info ul li strong {
   color: #FFD700;
 }
@@ -525,26 +503,21 @@ section {
   border-radius: 8px;
   margin: 2rem 0;
 }
-
 .feature-item-image {
   flex-shrink: 0;
   width: 120px;
 }
-
 .feature-item-image img {
   width: 100%;
   height: auto;
 }
-
 .feature-item-description {
   flex-grow: 1;
 }
-
 .feature-item-description h3 {
   color: #ffffff;
   margin-bottom: 0.5rem;
 }
-
 .feature-item-description ul {
   list-style-position: inside;
   padding-left: 0;
@@ -571,18 +544,15 @@ hr.section-divider {
   z-index: 9999;
   transition: opacity 0.8s ease-out;
 }
-
 #splash-logo {
   position: relative;
   width: 250px;
   overflow: hidden;
 }
-
 #splash-logo img {
   width: 100%;
   display: block;
 }
-
 #splash-logo::after {
   content: '';
   position: absolute;
@@ -593,17 +563,14 @@ hr.section-divider {
   background: linear-gradient(to top, rgba(26, 26, 26, 1) 0%, rgba(26, 26, 26, 0) 100%);
   animation: revealFromBottom 2s ease-in-out forwards;
 }
-
 @keyframes revealFromBottom {
   from {
     transform: translateY(100%);
   }
-
   to {
     transform: translateY(-100%);
   }
 }
-
 #splash-screen.hidden {
   opacity: 0;
   visibility: hidden;
@@ -616,7 +583,6 @@ hr.section-divider {
   flex-wrap: wrap;
   gap: 0.5rem;
 }
-
 .wiki-button {
   display: inline-block;
   background-color: rgba(0, 0, 0, 0.3);
@@ -629,8 +595,58 @@ hr.section-divider {
   font-size: 0.9rem;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
-
 .wiki-button:hover {
   background-color: #FFD700;
   color: #1a1a1a;
 }
+
+/* === NOVOS ESTILOS IMPLEMENTADOS === */
+
+.tier-list-container {
+  margin-top: 1.5rem;
+}
+
+.tier-block {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-left: 4px solid #FFD700;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.tier-block h2 {
+  color: #FFD700;
+  margin-bottom: 0.5rem;
+}
+
+.tier-block p {
+  color: #ddd;
+}
+
+.item-tier {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #555;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 0 0 8px 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: auto;
+  white-space: nowrap;
+}
+
+/* Cores para cada Tier */
+.item-tier.tier-e { background-color: #795548; } /* Marrom */
+.item-tier.tier-a { background-color: #4CAF50; } /* Verde */
+.item-tier.tier-s { background-color: #2196F3; } /* Azul */
+.item-tier.tier-ss { background-color: #673AB7; } /* Roxo */
+.item-tier.tier-sss { background-color: #f44336; } /* Vermelho */
+.item-tier.tier-sss-plus { background: linear-gradient(45deg, #f44336, #e91e63); } /* Gradiente Vermelho/Rosa */
+.item-tier.tier-op { background-color: #ff9800; } /* Laranja */
+.item-tier.tier-deus { background-color: #FFC107; } /* Amarelo Âmbar */
+.item-tier.tier-supreme { background-color: #c51162; } /* Rosa Escuro */
+.item-tier.tier-supreme-plus { background: linear-gradient(45deg, #c51162, #673AB7, #2196F3); } /* Gradiente Roxo/Azul */
