@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pokemon Eclipse Wiki</title>
+  <title>Pokemon Eclipse Wiki - Início</title>
   <meta name="description" content="Wiki completa do jogo Pokemon Eclipse - dicas, tiers, quests, itens e mais." />
   <link rel="stylesheet" href="css/style.css" />
   <script src="./components/sidebar.js"></script>
   <script src="./components/header.js"></script>
+  <script src="./components/footer.js"></script>
 </head>
 
 <body>
@@ -30,34 +30,33 @@
 
     <main id="content">
       <section>
-        <h2>Bem-vindo à Wiki do Pokemon Eclipse!</h2>
-        <p>
-          Este é o lugar ideal para explorar tudo sobre o universo do nosso jogo.
-          Use a navegação lateral para encontrar informações sobre Pokémons, quests, mecânicas de jogo e muito mais.
-        </p>
-        <h3>Entenda Sobre o Game:</h3>
-        <ul>
-          <li><a href="pages/moedas.html">Moedas Principais</a></li>
-          <li><a href="#">Explore o Mapa Inicial</a></li>
-          <li><a href="pages/tower.html">Tower</a></li>
-          <li><a href="pages/tier.html">Tiers dos Pokémons</a></li>
-        </ul>
-        <p>
-          Use essa wiki para navegar e descobrir os segredos que o nosso mundo guarda.
-        </p>
+        <h1>Últimas Atualizações</h1>
+        <p>Fique por dentro de todas as novidades e anúncios do Pokemon Eclipse!</p>
+
+        <div class="update-cards-container">
+            
+            <div class="update-card">
+              <h2>Nova Hunt de Farm Adicionada!</h2>
+              <img src="[LINK_DA_IMAGEM_DA_ATUALIZACAO]" alt="Imagem da atualização" />
+              <p>[Aqui vai a descrição da novidade, explicando o que mudou, o que foi adicionado, etc. Por exemplo: Uma nova área para farm de Shiny Stones foi descoberta! Prepare seus melhores Pokémon... ]</p>
+              <div class="post-date">Postado em: 27 de Julho, 2025</div>
+            </div>
+
+            <div class="update-card">
+              <h2>Evento de Fim de Semana: XP em Dobro!</h2>
+              <img src="[LINK_DA_IMAGEM_DO_EVENTO]" alt="Imagem do evento" />
+              <p>[Descrição do evento. Por exemplo: Neste fim de semana, todos os jogadores receberão o dobro de experiência em batalhas! Aproveite para upar seus Pokémons mais fracos.]</p>
+              <div class="post-date">Postado em: 26 de Julho, 2025</div>
+            </div>
+
+            </div>
       </section>
     </main>
   </div>
 
-  <footer id="main-footer">
-    <p>
-      © 2025 Pokemon Eclipse. Todos os direitos reservados.<br />
-      Desenvolvido com carinho para a comunidade.
-    </p>
-  </footer>
+  <custom-footer></custom-footer>
 
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="script/script.js"></script>
 </body>
-
 </html>
