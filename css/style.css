@@ -677,11 +677,11 @@ hr.section-divider {
 }
 
 .update-card img {
-  width: 100%;
-  max-height: 250px; /* Altura máxima padrão da imagem */
-  object-fit: cover; /* A imagem cobre o espaço sem distorcer */
-  border-radius: 5px;
-  margin: 0.5rem 0 1rem 0;
+ width: 100%;
+ height: auto; /* A altura se ajusta automaticamente à proporção da imagem */
+ object-fit: contain; /* A imagem inteira fica visível, mantendo a proporção */
+ border-radius: 5px;
+ margin: 0.5rem 0 1rem 0;
 }
 
 .update-card p {
