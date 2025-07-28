@@ -732,3 +732,10 @@ hr.section-divider {
   color: #ff4d4d;
   margin-bottom: 0.5rem;
 }
+
+/* Força os cards da página de moedas a ficarem em uma coluna só no PC */
+@media (min-width: 1024px) {
+  #moedas-cards {
+    grid-template-columns: 1fr;
+  }
+}
