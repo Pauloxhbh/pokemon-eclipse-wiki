@@ -14,7 +14,6 @@ class Sidebar extends HTMLElement {
           <li><a href="${pagesOrigin}/index.html">Início</a></li>
           <li><a href="${pagesOrigin}/pages/quests.html">Quests</a></li>
           <li><a href="${pagesOrigin}/pages/items.html">Itens e Equipamentos</a></li>
-          <li><a href="${pagesOrigin}/pages/catches.html">Pokémons de Catch</a></li>
           <li><a href="${pagesOrigin}/pages/farm.html">Hunts de Farm</a></li>
           <li><a href="${pagesOrigin}/pages/fusao.html">Fusões</a></li>
           <li><a href="${pagesOrigin}/pages/tower.html">Tower</a></li>
