@@ -739,3 +739,18 @@ hr.section-divider {
     grid-template-columns: 1fr;
   }
 }
+
+/* === ESTILO PARA IMAGEM DE TUTORIAL === */
+
+.tutorial-image-container {
+  margin: 1.5rem 0;
+}
+
+.tutorial-image-container img {
+  width: 100%;
+  max-width: 600px; /* Limita a largura máxima em telas grandes */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Centraliza a imagem */
+  border-radius: 8px;
+}
